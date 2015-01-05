@@ -130,6 +130,26 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
+  padding: 0 10px;
+}
+h1 {
+  text-align: center;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 100;
+  margin-bottom: 24px;
+}
+h2 {
+  color: #222;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+p {
+  color: #777777;
+  font-weight: 100;
+  margin: 0 0 20px 0;
 }
 small {
   font-size: 0.8em;
@@ -160,10 +180,19 @@ del {
   text-decoration: line-through;
 }
 hr {
-  border: solid #cccccc;
-  border-width: 1px 0 0;
+  border: solid #eeeeee;
+  border-width: 5px 0 0;
+  width: 15%;
   height: 0;
-  margin: 1em 0;
+  margin: 0 auto 20px;
+}
+.introduction {
+  text-align: center;
+  font-size: 21px;
+  line-height: 34px;
+  font-weight: 100;
+  max-width: 588px;
+  margin: 0 auto;
 }
 img {
   max-width: 100%;
@@ -198,7 +227,7 @@ figcaption {
   font-style: italic;
 }
 a {
-  color: #0088cc;
+  color: #de6868;
   background-color: transparent;
   outline: none;
 }
@@ -206,12 +235,12 @@ a:focus {
   outline: thin dotted;
 }
 a:hover {
-  color: #0066cc;
+  color: #de6868;
 }
 .btn {
   display: inline-block;
   color: #fff;
-  background: #0088cc;
+  background: #de6868;
   text-decoration: none;
   border: none;
   padding: 4px 12px;
@@ -219,6 +248,14 @@ a:hover {
   cursor: pointer;
   -webkit-appearance: none;
   -webkit-border-radius: 0;
+}
+.site-header {
+  border-bottom: 1px solid #eeeeee;
+  padding: 47px 4% 40px;
+  margin-bottom: 40px;
+}
+.portfolio-feature {
+  margin-bottom: 5px;
 }
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
@@ -231,7 +268,7 @@ a:hover {
 .screen-reader-text:focus {
   left: 15px;
   top: 15px;
-  color: #0088cc;
+  color: #de6868;
   background-color: #f1f1f1;
   font-weight: bold;
   text-decoration: none;
@@ -245,7 +282,7 @@ a:hover {
 }
 .row {
   width: 100%;
-  max-width: 996px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 .row:before,
