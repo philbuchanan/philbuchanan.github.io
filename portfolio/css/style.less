@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
 // LESS VARIABLES
 
 // Colors
@@ -9,20 +11,19 @@
 @lighterGrey:              #eee;
 @lightGrey:                #777;
 @mediumGrey:               #999;
-@darkGrey:                 #333;
+@darkGrey:                 #222;
 
 // Typography
-@sansSerifFontFamily:      Helvetica, Arial, sans-serif;
+@sansSerifFontFamily:      'Open Sans', sans-serif;
 @serifFontFamily:          Georgia, Times, serif;
 @baseFontFamily:           @sansSerifFontFamily;
-@baseFontSize:             16px;
-@baseLineHeight:           1.5;
+@baseFontSize:             17px;
+@baseLineHeight:           1.75;
 
 // Grid
-@maxWidth:                 1280px;
+@maxWidth:                 1484px;
 @columns:                  12;
-@gutter:                   10px;
-@marginBottom:             10px;
+@gutter:                   2%;
 
 @smallBreak:               481px;
 @mediumBreak:              769px;
@@ -89,26 +90,30 @@ body {
 	line-height: @baseLineHeight;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: 100%;
-	padding: 0 10px;
 }
 
 h1 {
 	text-align: center;
-	font-size: 24px;
-	line-height: 30px;
-	font-weight: 100;
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 0.1em;
 	margin-bottom: 24px;
 }
 
 h2 {
-	color: #222;
 	font-size: 20px;
 	line-height: 30px;
 	font-weight: 700;
 	margin: 0;
 }
 
-h3 {}
+h3 {
+	font-size: 18px;
+	line-height: 1.2;
+	font-weight: 700;
+	margin-bottom: 5px;
+}
 
 h4 {}
 
@@ -117,13 +122,8 @@ h5 {}
 h6 {}
 
 p {
-	color: @lightGrey;
-	font-weight: 100;
 	margin: 0 0 20px 0;
 }
-
-blockquote,
-blockquote p {}
 
 small {
 	font-size: 0.8em;
@@ -140,46 +140,12 @@ em {
 ul,
 ol {}
 
-sub,
-sup {
-	font-size: 75%;
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
-}
-
-sup {
-	top: -0.5em;
-}
-
-sub {
-	bottom: -0.25em;
-}
-
-ins {
-	text-decoration: underline;
-}
-
-del {
-	text-decoration: line-through;
-}
-
 hr {
-	border: solid @lighterGrey;
-	border-width: 5px 0 0;
-	width: 15%;
+	border: none;
+	border-top: 1px solid @mediumGrey;
+	width: 40px;
 	height: 0;
-	margin: 0 auto 20px;
-}
-
-// Intro Paragraph
-.introduction {
-	text-align: center;
-	font-size: 21px;
-	line-height: 34px;
-	font-weight: 100;
-	max-width: 588px;
-	margin: 0 auto;
+	margin: 1.6em auto;
 }
 
 
@@ -190,43 +156,7 @@ hr {
 img {
 	max-width: 100%;
 	height: inherit;
-}
-
-// Image alignment
-.alignnone {
-	margin-bottom: @marginBottom;
-}
-
-.alignleft {
-	float: left;
-	margin: 0 @gutter @marginBottom 0;
-}
-
-.alignright {
-	float: right;
-	margin: 0 0 @marginBottom @gutter;
-}
-
-.aligncenter {
-	display: block;
-	margin: 0 auto @marginBottom;
-}
-
-// Figures and captions
-figure {
-	width: 100% !important;
-	margin-bottom: @marginBottom;
-	
-	img {
-		margin-bottom: 8px;
-	}
-}
-
-figcaption {
-	text-align: left;
-	font-size: 0.8em;
-	line-height: 1.2;
-	font-style: italic;
+	vertical-align: middle;
 }
 
 
@@ -237,7 +167,9 @@ figcaption {
 a {
 	color: @linkColor;
 	background-color: transparent;
+	text-decoration: none;
 	outline: none;
+	transition: 0.3s;
 	
 	&:focus {
 		outline: thin dotted;
@@ -248,71 +180,145 @@ a {
 	}
 }
 
-.btn {
-	display: inline-block;
-	color: #fff;
-	background: @linkColor;
-	text-decoration: none;
-	border: none;
-	padding: 4px 12px;
-	margin: 0;
-	cursor: pointer;
-	-webkit-appearance: none;
-	-webkit-border-radius: 0;
-}
-
 
 
 // HEADERS & FOOTERS
 // ----------------------------------
 
 .site-header {
-	border-bottom: 1px solid @lighterGrey;
-	padding: 47px 4% 40px;
-	margin-bottom: 40px;
+	background: @darkGrey;
+	padding: 40px 8%;
+	margin-bottom: 5%;
 }
 
 .site-footer {}
+
+@media only screen and (min-width: @smallBreak) {
+	.site-header {
+		padding: 50px 8%;
+	}
+}
+
+@media only screen and (min-width: @mediumBreak) {
+	.site-header {
+		padding: 60px 8%;
+	}
+}
+
+@media only screen and (min-width: @largeBreak) {
+	.site-header {
+		padding: 70px 8%;
+		margin-bottom: 74px;
+	}
+}
 
 
 
 // CONTENT
 // ----------------------------------
 
-.main-content {}
-
-.portfolio-feature {
-	margin-bottom: @marginBottom;
+.container {
+	max-width: @maxWidth;
+	margin: 0 auto;
+	padding: 0 10px;
 }
 
+.introduction {
+	text-align: center;
+	font-size: 21px;
+	max-width: 660px;
+	margin: 0 auto;
+}
 
-
-// GLOBAL STYLES
-// ----------------------------------
-
-// Screen reader text
-.screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	overflow: hidden;
+// Portoflio items list
+.portfolio-items {
+	list-style: none;
 	
-	&:active,
-	&:focus {
-		left: 15px;
-		top: 15px;
-		color: @linkColor;
-		background-color: #f1f1f1;
-		font-weight: bold;
-		text-decoration: none;
-		box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
-		clip: auto;
-		width: auto;
-		height: auto;
-		padding: 8px 16px 7px;
-		z-index: 100000;
-		outline: none;
+	li {
+		text-align: center;
+		width: 100%;
+		margin-bottom: 20px;
+		padding: 0 @gutter @gutter;
+	}
+	
+	a {
+		display: block;
+		position: relative;
+		
+		&:hover {
+			img {
+				opacity: 0.7;
+			}
+			
+			&:after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: -5px;
+				right: -5px;
+				background: url("../images/ui/external-link.png");
+				width: 32px;
+				height: 32px;
+			}
+		}
+	}
+	
+	img {
+		margin-bottom: 15px;
+		transition: 0.3s;
+	}
+}
+
+.categories {
+	color: @lightGrey;
+	font-size: 13px;
+}
+
+@media only screen and (min-width: @smallBreak) {
+	.portfolio-items {
+		li {
+			float: left;
+			width: 50%;
+			margin-bottom: 30px;
+		}
+		
+		.featured {
+			width: 100%;
+		}
+	}
+}
+
+@media only screen and (min-width: @mediumBreak) {
+	.portfolio-items {
+		li {
+			width: 33.33333333%;
+			margin-bottom: 60px;
+		}
+		
+		.featured {
+			width: 50%;
+		}
+	}
+}
+
+@media only screen and (min-width: @largeBreak) {
+	.portfolio-items {
+		li {
+			width: 25%;
+		}
+	}
+}
+
+// Dark styles
+.dark {
+	color: #bbb;
+	
+	a {
+		text-decoration: underline;
+		
+		&:hover {
+			color: #fff;
+		}
 	}
 }
 
@@ -397,55 +403,4 @@ a {
 // Large screens grid
 @media only screen and (min-width: @mediumBreak) {
 	.grid-loop(large);
-}
-
-
-
-// PRINT STYLES
-// ----------------------------------
-
-@media print {
-	*,
-	*:before,
-	*:after {
-		color: #000 !important;
-		background: transparent !important;
-		box-shadow: none !important;
-		text-shadow: none !important;
-	}
-	
-	p,
-	h2,
-	h3 {
-		orphans: 3;
-		widows: 3;
-	}
-	
-	h2,
-	h3 {
-		page-break-after: avoid;
-	}
-	
-	a,
-	a:visited {
-		text-decoration: underline;
-	}
-	
-	a[href]:after {
-		content: " (" attr(href) ")";
-	}
-	
-	abbr[title]:after {
-		content: " (" attr(title) ")";
-	}
-	
-	a[href^="#"]:after,
-	a[href^="javascript:"]:after {
-		content: "";
-	}
-	
-	pre,
-	blockquote {
-		page-break-inside: avoid;
-	}
 }
