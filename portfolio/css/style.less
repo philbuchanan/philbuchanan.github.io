@@ -10,19 +10,17 @@
 // Grey
 @lighterGrey:              #eee;
 @lightGrey:                #777;
-@mediumGrey:               #999;
+@mediumGrey:               #666;
 @darkGrey:                 #222;
 
 // Typography
 @sansSerifFontFamily:      'Open Sans', sans-serif;
-@serifFontFamily:          Georgia, Times, serif;
 @baseFontFamily:           @sansSerifFontFamily;
 @baseFontSize:             17px;
 @baseLineHeight:           1.75;
 
 // Grid
 @maxWidth:                 1484px;
-@columns:                  12;
 @gutter:                   2%;
 
 @smallBreak:               481px;
@@ -115,18 +113,8 @@ h3 {
 	margin-bottom: 5px;
 }
 
-h4 {}
-
-h5 {}
-
-h6 {}
-
 p {
 	margin: 0 0 20px 0;
-}
-
-small {
-	font-size: 0.8em;
 }
 
 strong {
@@ -136,9 +124,6 @@ strong {
 em {
 	font-style: italic;
 }
-
-ul,
-ol {}
 
 hr {
 	border: none;
@@ -191,8 +176,6 @@ a {
 	margin-bottom: 5%;
 }
 
-.site-footer {}
-
 @media only screen and (min-width: @smallBreak) {
 	.site-header {
 		padding: 50px 8%;
@@ -223,11 +206,31 @@ a {
 	padding: 0 10px;
 }
 
+// Dark styles
+.dark {
+	color: #bbb;
+	
+	a {
+		text-decoration: underline;
+		
+		&:hover {
+			color: #fff;
+		}
+	}
+}
+
+// Introductory paragraph
 .introduction {
 	text-align: center;
-	font-size: 21px;
+	font-size: 16px;
 	max-width: 660px;
 	margin: 0 auto;
+}
+
+@media only screen and (min-width: @smallBreak) {
+	.introduction {
+		font-size: 21px;
+	}
 }
 
 // Portoflio items list
@@ -305,102 +308,30 @@ a {
 	.portfolio-items {
 		li {
 			width: 25%;
+			
+			&:nth-child(4n - 1) {
+				clear: both;
+			}
 		}
 	}
 }
 
-// Dark styles
-.dark {
-	color: #bbb;
-	
-	a {
-		text-decoration: underline;
-		
-		&:hover {
-			color: #fff;
-		}
-	}
-}
-
-
-
-// GRID & LAYOUT
-// ----------------------------------
-
-.row {
-	width: 100%;
-	max-width: @maxWidth;
-	margin: 0 auto;
-	
-	&:before,
-	&:after {
-		content: " ";
-		display: table;
-	}
-	
-	&:after {
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+	.portfolio-items li:nth-child(2n + 1) {
 		clear: both;
 	}
-	
-	.row {
-		width: auto;
-		margin: 0 -@gutter;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1483px) {
+	.portfolio-items li:nth-child(3n) {
+		clear: both;
 	}
 }
 
-.col {
-	float: left;
-	padding-left: @gutter;
-	padding-right: @gutter;
-	width: 100%;
-}
 
-.clear {
-	clear: both;
-}
 
 .clearfix:after {
 	content: "";
 	display: table;
 	clear: both;
-}
-
-.grid-calc(@property, @num) {
-	@{property}: (100% / @columns) * @num;
-}
-.grid-loop(@name, @i: @columns) when (@i > 0) {
-	.grid-loop(@name, (@i - 1));
-	
-	.@{name}-@{i} {
-		.grid-calc(width, @i);
-	}
-	
-	.@{name}-offset-@{i} {
-		.grid-calc(margin-left, @i);
-	}
-	
-	.@{name}-push-@{i} {
-		position: relative;
-		.grid-calc(left, @i);
-		right: auto;
-	}
-	
-	.@{name}-pull-@{i} {
-		position: relative;
-		left: auto;
-		.grid-calc(right, @i);
-	}
-}
-
-// Small screens grid
-.grid-loop(small);
-
-// Medium screens grid
-@media only screen and (min-width: @smallBreak) {
-	.grid-loop(medium);
-}
-
-// Large screens grid
-@media only screen and (min-width: @mediumBreak) {
-	.grid-loop(large);
 }
