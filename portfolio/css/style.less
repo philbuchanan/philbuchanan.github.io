@@ -97,6 +97,15 @@ h1 {
 	font-weight: 700;
 	letter-spacing: 0.1em;
 	margin-bottom: 24px;
+	
+	&:after {
+		content: "";
+		display: block;
+		background: @mediumGrey;
+		width: 40px;
+		height: 1px;
+		margin: 1.6em auto;
+	}
 }
 
 h2 {
@@ -123,14 +132,6 @@ strong {
 
 em {
 	font-style: italic;
-}
-
-hr {
-	border: none;
-	border-top: 1px solid @mediumGrey;
-	width: 40px;
-	height: 0;
-	margin: 1.6em auto;
 }
 
 
@@ -165,6 +166,61 @@ a {
 	}
 }
 
+nav {
+	text-align: center;
+}
+
+.nav-social {
+	display: inline-block;
+	margin-top: 3.2em;
+	list-style: none;
+	
+	li {
+		float: left;
+		margin-left: 36px;
+		
+		&:first-child {
+			margin: 0;
+		}
+	}
+	
+	a {
+		display: block;
+		background-image: url("../images/ui/social-media-icons.png");
+		background-repeat: no-repeat;
+		background-size: 84px 56px;
+		text-indent: -999px;
+		width: 28px;
+		height: 28px;
+		overflow: hidden;
+		transition: none;
+	}
+	
+	.twitter a {
+		background-position: 0 0;
+		
+		&:hover {
+			background-position: 0 -28px;
+		}
+	}
+	
+	.dribbble a {
+		background-position: -28px 0;
+		
+		&:hover {
+			background-position: -28px -28px;
+		}
+	}
+	
+	.github a {
+		background-position: -56px 0;
+		
+		&:hover {
+			background-position: -56px -28px;
+		}
+	}
+}
+
 
 
 // HEADERS & FOOTERS
@@ -174,12 +230,13 @@ a {
 	background: @darkGrey;
 	background-image: url("../images/ui/geo.png");
 	background-size: 100%;
-	margin-bottom: 5%;
+	margin-bottom: 8%;
 	padding: 40px 8%;
 }
 
 @media only screen and (min-width: @smallBreak) {
 	.site-header {
+		margin-bottom: 5%;
 		padding: 50px 8%;
 	}
 }
@@ -328,12 +385,4 @@ a {
 	.portfolio-items li:nth-child(3n) {
 		clear: both;
 	}
-}
-
-
-
-.clearfix:after {
-	content: "";
-	display: table;
-	clear: both;
 }
