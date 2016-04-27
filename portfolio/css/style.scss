@@ -1,0 +1,369 @@
+// # Sass variables
+// ----------------------------------
+
+// Grey
+$grey80:                   #ccc;
+$grey65:                   #a6a6a6;
+$grey40:                   #666;
+$grey30:                   #4d4d4d;
+$grey13:                   #222;
+
+// Colors
+$textColor:                $grey30;
+$linkColor:                #de6868;
+$linkColorHover:           $linkColor;
+
+// Typography
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+$sansSerifFontFamily:      'Open Sans', sans-serif;
+$baseFontFamily:           $sansSerifFontFamily;
+$baseFontSize:             17px;
+$baseLineHeight:           1.75;
+
+// Grid
+$maxWidth:                 1484px;
+$gutter:                   2%;
+
+$smallBreak:               481px;
+$mediumBreak:              769px;
+$largeBreak:               $maxWidth;
+
+
+
+// # Reset
+// ----------------------------------
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+header, footer, main, article, aside, details,
+figcaption, figure, menu, nav, section {
+	display: block;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+
+
+// # Typography
+// ----------------------------------
+
+body {
+	color: $textColor;
+	font-family: $baseFontFamily;
+	font-size: $baseFontSize;
+	line-height: $baseLineHeight;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	    -ms-text-size-adjust: 100%;
+}
+
+h1 {
+	text-align: center;
+	font-size: 0.9em;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	margin-bottom: 24px;
+
+	&:after {
+		content: "";
+		display: block;
+		background: $grey65;
+		width: 40px;
+		height: 1px;
+		margin: 1.6em auto;
+	}
+}
+
+h2 {
+	font-size: 1.05em;
+	line-height: 1.2;
+	font-weight: 700;
+	margin-bottom: 0.1em;
+}
+
+p {
+	margin-bottom: 1.2em;
+}
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+
+
+// # Images and media
+// ----------------------------------
+
+img {
+	border: 0;
+	max-width: 100%;
+	height: inherit;
+	vertical-align: middle;
+}
+
+
+
+// # Navigation
+// ----------------------------------
+
+
+
+// ## Links
+// ----------------------------------
+
+a {
+	color: $linkColor;
+	background-color: transparent;
+	text-decoration: none;
+	outline: none;
+	transition: 0.2s;
+
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:hover {
+		color: $linkColorHover;
+	}
+}
+
+
+
+// ## Menus
+// ----------------------------------
+
+nav {
+	text-align: center;
+}
+
+.nav-social {
+	display: inline-block;
+	margin: 3.2em 0 1em;
+	list-style: none;
+}
+
+.nav-social-item {
+	float: left;
+	margin-left: 18px;
+	margin-right: 18px;
+}
+
+.social-icon {
+	fill: $grey80;
+	transition: 0.3s;
+}
+
+.social-icon--twitter {
+	margin-top: 3px;
+}
+
+.nav-social-item-link {
+	display: block;
+	text-align: center;
+	width: 28px;
+	height: 28px;
+
+	&:hover,
+	&:focus {
+		.social-icon {
+			fill: $linkColorHover;
+		}
+	}
+}
+
+.email {
+	color: $grey80;
+	text-align: center;
+	text-decoration: none;
+
+	&:hover {
+		color: $linkColor;
+	}
+}
+
+
+
+// # Headers and footers
+// ----------------------------------
+
+.site-header {
+	color: $grey80;
+	background: $grey13;
+	background-image: url("../images/ui/geo.png");
+	background-size: 100%;
+	margin-bottom: 8%;
+	padding: 40px 8%;
+}
+
+@media only screen and (min-width: $smallBreak) {
+	.site-header {
+		margin-bottom: 5%;
+		padding: 50px 8%;
+	}
+}
+
+@media only screen and (min-width: $mediumBreak) {
+	.site-header {
+		padding: 60px 8%;
+	}
+}
+
+@media only screen and (min-width: $largeBreak) {
+	.site-header {
+		margin-bottom: 74px;
+		padding: 70px 8%;
+	}
+}
+
+
+
+// # Content
+// ----------------------------------
+
+.container {
+	max-width: $maxWidth;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+// Introductory paragraph
+.introduction {
+	text-align: center;
+	max-width: 660px;
+	margin: 0 auto;
+
+	a {
+		text-decoration: underline;
+
+		&:hover {
+			color: #fff;
+		}
+	}
+}
+
+@media only screen and (min-width: $smallBreak) {
+	.introduction {
+		font-size: 21px;
+	}
+}
+
+// Portoflio items list
+.portfolio-items {
+	list-style: none;
+}
+
+.portfolio-item {
+	text-align: center;
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 0 $gutter $gutter;
+}
+
+.portfolio-item-link {
+	display: block;
+	position: relative;
+
+	&:hover,
+	&:focus {
+		outline: none;
+
+		.portfolio-item-image {
+			transform: scale(1.04, 1.04);
+			box-shadow: 0 0 16px rgba(0, 0, 0, 0.35);
+		}
+	}
+}
+
+.portfolio-item-image {
+	margin-bottom: 15px;
+	transition: 0.3s;
+}
+
+.categories {
+	color: $grey40;
+	font-size: 0.75em;
+}
+
+@media only screen and (min-width: $smallBreak) {
+	.portfolio-item {
+		float: left;
+		width: 50%;
+		margin-bottom: 30px;
+
+		&.portfolio-item--featured {
+			width: 100%;
+		}
+	}
+}
+
+@media only screen and (min-width: $mediumBreak) {
+	.portfolio-item {
+		width: 33.33333333%;
+		margin-bottom: 60px;
+
+		&.portfolio-item--featured {
+			width: 50%;
+		}
+	}
+}
+
+@media only screen and (min-width: $largeBreak) {
+	.portfolio-item {
+		width: 25%;
+
+		&:nth-child(4n - 1) {
+			clear: both;
+		}
+	}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+	.portfolio-item:nth-child(2n + 1) {
+		clear: both;
+	}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1483px) {
+	.portfolio-item:nth-child(3n) {
+		clear: both;
+	}
+}

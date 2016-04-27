@@ -1,1 +1,1 @@
-<?php // Silance is golden ?>
+<?php // Silance is golden
