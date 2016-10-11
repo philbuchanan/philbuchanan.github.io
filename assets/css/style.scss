@@ -14,9 +14,12 @@ $font-size-h3:         19px;
 $font-size-h4:         16px;
 $font-size-tiny:       12px;
 
+$color-blue:           #2c66ee;
+$color-green:          #34e3bd;
+
 $color-text:           #444;
 $color-text-secondary: #767676;
-$color-link:           #2d65ee;
+$color-link:           $color-blue;
 $color-grey-90:        #e5e5e5;
 
 // Calculate baseline grid compatible fonts sizes.
@@ -27,8 +30,15 @@ $color-grey-90:        #e5e5e5;
 
 // Calculate baseline grid compatible rem based values.
 // Convert any px value into its rem equivalent.
-@mixin rem($property, $value) {
-	#{$property}: $value / $global-font-size * 1rem;
+@mixin rem($property, $value, $important: false) {
+	@if ($important == true) {
+		$important: !important;
+	}
+	@elseif ($important == false) {
+		$important: null;
+	}
+
+	#{$property}: $value / $global-font-size * 1rem $important;
 }
 
 @mixin clearfix() {
@@ -110,19 +120,13 @@ body {
 
 	&:after {
 		content: " ";
-		width: $global-spacing-unit / 2;
+		@include rem(width, $global-spacing-unit);
 		position: fixed;
 		top: 0;
 		bottom: 0;
 		left: 0;
-		background: rgba(52,227,189,1);
-		background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(52,227,189,1)), color-stop(100%, rgba(44,102,238,1)));
-		background:         linear-gradient(to bottom, rgba(52,227,189,1) 0%, rgba(44,102,238,1) 100%);
-		background: -webkit-linear-gradient(top, rgba(52,227,189,1) 0%, rgba(44,102,238,1) 100%);
-		background:    -moz-linear-gradient(top, rgba(52,227,189,1) 0%, rgba(44,102,238,1) 100%);
-		background:     -ms-linear-gradient(top, rgba(52,227,189,1) 0%, rgba(44,102,238,1) 100%);
-		background:      -o-linear-gradient(top, rgba(52,227,189,1) 0%, rgba(44,102,238,1) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#34e3bd', endColorstr='#2c66ee', GradientType=0 );
+		background: $color-blue;
+		background: linear-gradient(to bottom, $color-green, $color-blue);
 	}
 }
 
@@ -133,7 +137,7 @@ body {
 		@include rem(padding-left, $global-spacing-unit);
 
 		&:after {
-			width: $global-spacing-unit;
+			@include rem(width, $global-spacing-unit);
 		}
 	}
 }
@@ -164,12 +168,6 @@ h3 {
 h4 {
 	@include font-size($font-size-h4);
 	font-weight: bold;
-}
-
-small,
-.u-tiny-text {
-	color: $color-text-secondary;
-	@include font-size($font-size-tiny);
 }
 
 ul,
@@ -230,10 +228,10 @@ a {
 
 .o-wrapper {
 	@include clearfix();
-	padding-right: $global-spacing-unit;
-	padding-left:  $global-spacing-unit;
-	margin-right: auto;
+	@include rem(padding-left, $global-spacing-unit);
+	@include rem(padding-right, $global-spacing-unit);
 	margin-left:  auto;
+	margin-right: auto;
 	max-width: $wrapper-width;
 }
 
@@ -283,11 +281,7 @@ a {
 }
 
 .c-nav__item {
-	margin-right: $global-spacing-unit;
-
-	&:last-child {
-		margin-left: 0;
-	}
+	@include rem(margin-right, $global-spacing-unit);
 }
 
 
@@ -295,13 +289,18 @@ a {
 // # Utilities
 // ----------------------------------
 
+.u-tiny-text {
+	color: $color-text-secondary;
+	@include font-size($font-size-tiny);
+}
+
 .u-clearfix {
 	@include clearfix();
 }
 
 .u-align-none {
-	display: inline-block;
-	@include rem(margin-bottom, $global-spacing-unit);
+	display: inline-block !important;
+	@include rem(margin-bottom, $global-spacing-unit, true);
 }
 
 .u-margin-bottom-none {
