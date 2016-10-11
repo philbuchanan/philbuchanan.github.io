@@ -106,6 +106,7 @@ html {
 body {
 	@include rem(padding-top, $global-spacing-unit);
 	@include rem(padding-bottom, $global-spacing-unit);
+	@include rem(padding-left, ($global-spacing-unit / 2));
 
 	&:after {
 		content: " ";
