@@ -1,1 +1,0 @@
-<?php // Silance is golden
