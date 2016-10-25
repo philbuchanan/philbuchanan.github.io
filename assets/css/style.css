@@ -82,7 +82,7 @@ body:after {
     padding-left: 1.5rem;
   }
   body:after {
-    width: 1.5rem;
+    width: 0.75rem;
   }
 }
 
@@ -215,6 +215,14 @@ a:hover {
 
 .c-nav__item {
   margin-right: 1.5rem;
+}
+
+.u-screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .u-tiny-text {
