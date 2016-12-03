@@ -120,7 +120,7 @@ body {
 
 	&:after {
 		content: " ";
-		@include rem(width, $global-spacing-unit);
+		@include rem(width, ($global-spacing-unit / 2));
 		position: fixed;
 		top: 0;
 		bottom: 0;
@@ -137,7 +137,7 @@ body {
 		@include rem(padding-left, $global-spacing-unit);
 
 		&:after {
-			@include rem(width, ($global-spacing-unit / 2));
+			@include rem(width, $global-spacing-unit);
 		}
 	}
 }

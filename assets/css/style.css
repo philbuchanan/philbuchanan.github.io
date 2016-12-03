@@ -66,7 +66,7 @@ body {
 
 body:after {
   content: " ";
-  width: 1.5rem;
+  width: 0.75rem;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -82,7 +82,7 @@ body:after {
     padding-left: 1.5rem;
   }
   body:after {
-    width: 0.75rem;
+    width: 1.5rem;
   }
 }
 
