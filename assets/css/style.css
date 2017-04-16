@@ -88,7 +88,7 @@ body:after {
 
 h1, h2, h3, h4, h5, h6,
 blockquote, p, pre,
-ul, ol, dl
+ul, ol, dl,
 figure,
 hr {
   margin-bottom: 1.5rem;
@@ -142,6 +142,12 @@ img {
   max-width: 100%;
   height: inherit;
   vertical-align: middle;
+}
+
+figcaption {
+  font-size: 0.75rem;
+  line-height: 2;
+  font-style: italic;
 }
 
 a {
@@ -252,4 +258,13 @@ a:hover {
 
 .u-pull-right {
   float: right !important;
+}
+
+.u-1of2 {
+  width: 50%;
+}
+
+.u-align-right {
+  float: right;
+  margin-left: 24px;
 }

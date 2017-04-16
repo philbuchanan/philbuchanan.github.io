@@ -144,7 +144,7 @@ body {
 
 h1, h2, h3, h4, h5, h6,
 blockquote, p, pre,
-ul, ol, dl
+ul, ol, dl,
 figure,
 hr {
 	@include rem(margin-bottom, $global-spacing-unit);
@@ -199,6 +199,11 @@ img {
 	max-width: 100%;
 	height: inherit;
 	vertical-align: middle;
+}
+
+figcaption {
+	@include font-size($font-size-tiny);
+	font-style: italic;
 }
 
 
@@ -321,4 +326,13 @@ a {
 
 .u-pull-right {
 	float: right !important;
+}
+
+.u-1of2 {
+	width: 50%;
+}
+
+.u-align-right {
+	float: right;
+	margin-left: 24px;
 }
