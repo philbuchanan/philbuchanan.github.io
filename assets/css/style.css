@@ -261,7 +261,7 @@ a:hover {
 }
 
 .u-1of2 {
-  width: 50%;
+  width: 50% !important;
 }
 
 .u-align-right {
