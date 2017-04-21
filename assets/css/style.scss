@@ -336,3 +336,24 @@ a {
 	float: right;
 	margin-left: 24px;
 }
+
+
+
+// Print Styles
+// ----------------------------------
+
+@media print {
+	.c-header,
+	.c-footer {
+		display: none;
+	}
+
+	a {
+		color: $color-text;
+
+		&:after {
+			content: " (" attr(href) ")";
+			font-size: 80%;
+		}
+	}
+}

@@ -268,3 +268,17 @@ a:hover {
   float: right;
   margin-left: 24px;
 }
+
+@media print {
+  .c-header,
+  .c-footer {
+    display: none;
+  }
+  a {
+    color: #444;
+  }
+  a:after {
+    content: " (" attr(href) ")";
+    font-size: 80%;
+  }
+}
