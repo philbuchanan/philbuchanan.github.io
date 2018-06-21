@@ -360,7 +360,7 @@ a:hover {
 
 .c-portfolio-item__image {
   margin-bottom: 0.75rem;
-  transition: scale 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .c-portfolio-item__title {
