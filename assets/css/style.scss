@@ -1,123 +1,30 @@
 // # Sass variables
-// ----------------------------------
+// -----------------------------------------------------------------------------
 
-$global-font-size:          16px;
-$global-line-height:        24px;
-$global-spacing-unit:       round($global-line-height);
+$font-size:                         18px;
+$line-height:                       1.75;
 
-$wrapper-width:             1396px;
-$wrapper-width-narrow:      698px;
-$totalBlockGridColumns:     3;
-$gutter:                    round($global-line-height / 2);
+$spacing:                           1.333333rem;
+$spacing-xs:                        $spacing * 0.25;
+$spacing-sm:                        $spacing * 0.5;
+$spacing-md:                        $spacing * 1; // Same as unsuffixed
+$spacing-lg:                        $spacing * 2;
+$spacing-xl:                        $spacing * 3;
 
-$breakpoints: (
-	xSmall: 475px,
-	small:  600px,
-	medium: 970px,
-	large:  $wrapper-width
-);
+$wrapper-width:                     40rem;
 
-$font-size-h1:              40px;
-$font-size-h2:              24px;
-$font-size-h3:              19px;
-$font-size-h4:              16px;
-$font-size-tiny:            12px;
+$color-blue:                        #2c66ee;
+$color-green:                       #34e3bd;
 
-$color-blue:                #2c66ee;
-$color-green:               #34e3bd;
-
-$color-text:                #444;
-$color-text-secondary:      #767676;
-$color-link:                $color-blue;
-$color-grey-90:             #e5e5e5;
-
-// Calculate baseline grid compatible fonts sizes.
-@mixin font-size($font-size) {
-	font-size: ($font-size / $global-font-size) * 1rem;
-	line-height: ceil($font-size / $global-line-height) * ($global-line-height / $font-size);
-}
-
-// Calculate baseline grid compatible rem based values.
-// Convert any px value into its rem equivalent.
-@mixin rem($property, $value, $important: false) {
-	@if ($important == true) {
-		$important: !important;
-	}
-	@elseif ($important == false) {
-		$important: null;
-	}
-
-	#{$property}: $value / $global-font-size * 1rem $important;
-}
-
-@mixin clearfix() {
-	&:after {
-		content: "" !important;
-		display: block !important;
-		clear: both !important;
-	}
-}
-
-// Media Queries
-@mixin respond-to($breakpoint) {
-	$value: map-get($breakpoints, $breakpoint);
-
-	@media screen and (min-width: $value) {
-		@content;
-	}
-}
-
-@mixin respond-to-small-only {
-	@media screen and (max-width: map-get($breakpoints, small) - 1) {
-		@content;
-	}
-}
-
-@mixin respond-to-medium-only {
-	@media screen and (min-width: map-get($breakpoints, small)) and (max-width: (map-get($breakpoints, medium) - 1)) {
-		@content;
-	}
-}
-
-@mixin respond-to-large-only {
-	@media screen and (min-width: map-get($breakpoints, medium)) {
-		@content;
-	}
-}
-
-// CSS3 transforms
-@mixin transform($transform) {
-	-webkit-transform: $transform;
-	   -moz-transform: $transform;
-	    -ms-transform: $transform;
-	     -o-transform: $transform;
-	        transform: $transform;
-}
-
-@mixin translate($x, $y) {
-	@include transform(translate($x, $y));
-}
-
-@mixin translateX($x) {
-	@include transform(translateX($x));
-}
-
-@mixin translateY($y) {
-	@include transform(translateY($y));
-}
-
-@mixin rotate($deg) {
-	@include transform(rotate($deg));
-}
-
-@mixin scale($sx, $sy) {
-	@include transform(scale($sx, $sy));
-}
+$color-text:                        #444;
+$color-text-secondary:              #767676;
+$color-link:                        $color-blue;
+$color-grey-90:                     #eee;
 
 
 
 // # Reset
-// ----------------------------------
+// -----------------------------------------------------------------------------
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -139,112 +46,146 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 header, footer, main, article, aside, details,
 figcaption, figure, menu, nav, section {
 	display: block;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: "";
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
 html {
 	box-sizing: border-box;
 }
-*, *:before, *:after {
-	box-sizing: inherit;
+
+
+
+// # Box Sizing
+// -----------------------------------------------------------------------------
+
+// More sensible default box-sizing:
+// css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+
+html {
+	box-sizing: border-box;
+}
+
+* {
+	&,
+	&:before,
+	&:after {
+		box-sizing: inherit;
+	}
 }
 
 
 
 // # Elements
-// ----------------------------------
+// -----------------------------------------------------------------------------
 
 html {
 	color: $color-text;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	font-size: ($global-font-size / 16px) * 1em;
-	line-height: $global-line-height / $global-font-size;
+	font-size: $font-size;
+	line-height: $line-height;
 	font-weight: 400;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: 100%;
 	    -ms-text-size-adjust: 100%;
-}
-
-body {
-	@include rem(padding-top, $global-spacing-unit);
-	@include rem(padding-bottom, $global-spacing-unit);
-	@include rem(padding-left, ($global-spacing-unit / 2));
 
 	&:after {
 		content: " ";
-		@include rem(width, ($global-spacing-unit / 2));
+		width: 0.75rem;
 		position: fixed;
 		top: 0;
 		bottom: 0;
 		left: 0;
 		background: $color-blue;
-		background: linear-gradient(to bottom, $color-green, $color-blue);
+		background: linear-gradient($color-green, $color-blue);
 	}
 }
 
-@media screen and (min-width: $wrapper-width-narrow) {
-	body {
-		@include rem(padding-top, ($global-spacing-unit * 3));
-		@include rem(padding-bottom, ($global-spacing-unit * 3));
-		@include rem(padding-left, $global-spacing-unit);
+body {
+	max-width: $wrapper-width;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+}
 
+@media screen and (min-width: 44rem) {
+	html {
 		&:after {
-			@include rem(width, $global-spacing-unit);
+			width: 1.5rem;
 		}
 	}
+
+	body {
+		padding-top: 4rem;
+	}
 }
 
-h1, h2, h3, h4, h5, h6,
-blockquote, p, pre,
-ul, ol, dl,
-figure,
-hr {
-	@include rem(margin-bottom, $global-spacing-unit);
-}
+
+
+// ## Typography
+// -----------------------------------------------------------------------------
 
 h1 {
-	@include font-size($font-size-h1);
+	font-size: 2rem;
+	line-height: 1.4;
 	font-weight: bold;
+	margin-bottom: 1em;
 }
 
 h2 {
-	@include font-size($font-size-h2);
+	font-size: 1.5rem;
+	line-height: 1.4;
 	font-weight: bold;
+	margin-bottom: 1em;
 }
 
 h3 {
-	@include font-size($font-size-h3);
+	font-size: 1rem;
 	font-weight: bold;
 }
 
-h4 {
-	@include font-size($font-size-h4);
-	font-weight: bold;
+p {
+	margin-bottom: 1.25em;
 }
 
-ul,
+ul {
+	list-style: disc;
+}
+
 ol {
-	@include rem(margin-left, $global-spacing-unit);
+	list-style: decimal;
 }
 
-ul ul,
-ul ol,
-ol ol,
-ol ul {
+li ul,
+li ol {
 	margin-bottom: 0;
+}
+
+ol,
+ul {
+	margin-left: 1.3333rem;
+	margin-bottom: 1.25em;
+}
+
+li {
+	margin-bottom: 0.5em;
 }
 
 strong {
@@ -255,35 +196,9 @@ em {
 	font-style: italic;
 }
 
-
-
-// ## Images and media
-// ----------------------------------
-
-img {
-	max-width: 100%;
-	height: inherit;
-	vertical-align: middle;
-}
-
-figcaption {
-	@include font-size($font-size-tiny);
-	font-style: italic;
-}
-
-
-
-// ## Links
-// ----------------------------------
-
 a {
 	color: $color-link;
 	text-decoration: none;
-	outline: none;
-
-	&:focus {
-		outline: thin dotted;
-	}
 
 	&:hover {
 		text-decoration: underline;
@@ -292,207 +207,154 @@ a {
 
 
 
+// ## Images and media
+// -----------------------------------------------------------------------------
+
+img {
+	max-width: 100%;
+	height: inherit;
+	vertical-align: middle;
+}
+
+
+
 // # Objects
-// ----------------------------------
-
-.o-wrapper {
-	@include clearfix();
-	@include rem(padding-left, $global-spacing-unit);
-	@include rem(padding-right, $global-spacing-unit);
-	margin-left:  auto;
-	margin-right: auto;
-	max-width: $wrapper-width;
-}
-
-.o-wrapper--narrow {
-	max-width: $wrapper-width-narrow;
-}
-
-.o-island {
-	@include rem(margin-bottom, ($global-spacing-unit * 2));
-}
+// -----------------------------------------------------------------------------
 
 .o-list-bare {
 	list-style: none;
 	margin-left: 0;
-}
 
-.o-list-inline {
-	list-style: none;
-	margin-left: 0;
-}
-
-.o-list-inline__item {
-	display: inline-block;
-}
-
-@media screen and (min-width: $wrapper-width-narrow) {
-	.o-island {
-		@include rem(margin-bottom, ($global-spacing-unit * 3));
+	li {
+		margin: 0;
 	}
 }
 
+.o-list-ruled {
+	li {
+		padding-top: $spacing-md;
+		padding-bottom: $spacing-md;
 
-
-// # Objects: Block Grid
-// ----------------------------------
-
-@mixin block-grid-loop($size) {
-	@for $i from 1 through $totalBlockGridColumns {
-		.o-block-grid-#{$i}-#{$size} {
-			.o-block-grid__item {
-				width: (100% / $i);
-
-				&:nth-of-type(1n) {
-					clear: none;
-				}
-
-				&:nth-of-type(#{$i}n + 1) {
-					clear: both;
-				}
-			}
+		&:not(:last-child) {
+			border-bottom: 1px solid $color-grey-90;
 		}
 	}
-}
-
-
-.o-block-grid {
-	@include clearfix();
-	display: block;
-	margin-left: -$gutter;
-	margin-right: -$gutter;
-}
-
-.o-block-grid__item {
-	display: block;
-	float: left;
-	width: 100%;
-	padding-left: $gutter;
-	padding-right: $gutter;
-}
-
-// Small screens grid
-@include respond-to(xSmall) {
-	@include block-grid-loop(small);
-}
-
-// Medium screens grid
-@include respond-to(small) {
-	@include block-grid-loop(medium);
-}
-
-// Large screens grid
-@include respond-to(medium) {
-	@include block-grid-loop(large);
 }
 
 
 
 // # Components
-// ----------------------------------
+// -----------------------------------------------------------------------------
 
-.c-header {
+.c-site-header {
 	border-bottom: 1px solid $color-grey-90;
+	margin-bottom: $spacing-lg;
 }
 
-.c-footer {
+.c-site-footer {
 	border-top: 1px solid $color-grey-90;
+	padding-top: $spacing;
 }
 
-.c-nav {
-	@include rem(padding-top, $global-spacing-unit);
+.c-post-footer {
+	color: $color-text-secondary;
+	font-size: 0.666666rem;
+	margin-top: $spacing-lg;
+}
+
+.c-main-content {
+	margin-bottom: $spacing-xl;
+}
+
+.c-section {
+	margin-bottom: $spacing-xl;
+}
+
+.c-nav__list {
+	display: flex;
+	font-size: 0.75rem;
 }
 
 .c-nav__item {
-	@include rem(margin-right, $global-spacing-unit);
+	&:not(:last-child) {
+		margin-right: $spacing;
+	}
 }
 
-.c-portfolio-item {
-	display: block;
-	@include rem(margin-bottom, $global-spacing-unit);
+.c-breadcrumbs {
+	color: $color-text-secondary;
+	font-size: 0.75rem;
+	margin-bottom: 1rem;
+}
 
-	&:hover,
-	&:focus {
-		text-decoration: none;
-		outline: none;
+.c-breadcrumbs__list {
+	display: flex;
+}
 
-		.c-portfolio-item__image {
-			@include scale(1.04, 1.04);
-			box-shadow: 0 0 16px rgba(0, 0, 0, 0.15);
-		}
-
-		.c-portfolio-item__title {
-			text-decoration: underline;
+.c-breadcrumbs__item {
+	&:not(:last-child) {
+		&:after {
+			content: "/";
+			margin-left: $spacing-xs;
+			margin-right: $spacing-xs;
 		}
 	}
 }
 
-.c-portfolio-item__image {
-	@include rem(margin-bottom, ($global-spacing-unit / 2));
-	transition: transform 0.2s, box-shadow 0.2s;
+
+
+// ## Resume
+// -----------------------------------------------------------------------------
+
+.c-resume {
+	line-height: 1.4;
 }
 
-.c-portfolio-item__title {
-	margin-bottom: 0;
+.c-resume__details {
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+@media screen and (min-width: 28rem) {
+	.c-resume {
+		display: flex;
+	}
+
+	.c-resume__date {
+		flex: 0 0 auto;
+		width: 9rem;
+		margin-right: 1.5rem;
+	}
 }
 
 
 
 // # Utilities
-// ----------------------------------
+// -----------------------------------------------------------------------------
 
-.u-screen-reader-text {
+.u-sr-only {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute;
 	width: 1px;
 	height: 1px;
 	overflow: hidden;
+	white-space: nowrap;
 }
 
-.u-tiny-text {
-	color: $color-text-secondary;
-	@include font-size($font-size-tiny);
-}
-
-.u-clearfix {
-	@include clearfix();
-}
-
-.u-align-none {
-	display: inline-block !important;
-	@include rem(margin-bottom, $global-spacing-unit, true);
-}
-
-.u-margin-bottom-none {
+.u-no-margin-bottom {
 	margin-bottom: 0 !important;
 }
 
-.u-pull-left {
-	float: left !important;
-}
-
-.u-pull-right {
-	float: right !important;
-}
-
-.u-1of2 {
-	width: 50% !important;
-}
-
-.u-align-right {
-	float: right;
-	margin-left: 24px;
-}
 
 
-
-// Print Styles
-// ----------------------------------
+// # Print Styles
+// -----------------------------------------------------------------------------
 
 @media print {
-	.c-header,
-	.c-footer {
-		display: none;
+	html {
+		font-size: 12px;
+		line-height: 1.25;
 	}
 
 	a {
@@ -502,5 +364,24 @@ a {
 			content: " (" attr(href) ")";
 			font-size: 80%;
 		}
+	}
+
+	.c-site-header,
+	.c-site-footer {
+		display: none;
+	}
+
+	.c-resume {
+		display: flex;
+	}
+
+	.c-resume__date {
+		flex: 0 0 auto;
+		width: 9rem;
+		margin-right: 1.5rem;
+	}
+
+	.u-no-print {
+		display: none;
 	}
 }

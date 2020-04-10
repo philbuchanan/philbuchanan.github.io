@@ -7,76 +7,78 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="author" content="Phil Buchanan">
 		<link rel="stylesheet" href="/assets/css/style.css">
-		<link rel="canonical" href="https://philbuchanan.com/posts/take-ownership-of-your-design-with-living-style-guides">
-		<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+		<link rel="canonical" href="https://philbuchanan.com/posts/take-ownership-of-your-design-with-living-style-guides/">
 		<link rel="icon" type="image/png" href="/assets/logos/favicon.png">
 		<link rel="apple-touch-icon" sizes="180x180" href="/assets/logos/icon-180.png">
 	</head>
 	<body>
-		<main>
-				<div class="o-wrapper o-wrapper--narrow">
-					<header class="c-header o-island">
-						<p class="u-tiny-text"><a href="/">Phil Buchanan</a> / Take Ownership of Your Design with Living Style Guides</p>
-					</header>
-					<article class="o-island">
-						<header>
-							<h1 class="u-margin-bottom-none">Take Ownership of Your Design with Living Style Guides</h1>
-							<p class="u-tiny-text"><span class="u-screen-reader-text">Article tagged as: </span>Design, Style Guides, Communication, Design Process, Product Design</p>
-						</header>
-						<p>Lots has been written about the <a href="http://atomicdesign.bradfrost.com/chapter-1/">value of style guides</a>. I’ll assume you’ve read the whys and wherefores, so I’ll spare you the pitch. What I will tell you, is that at EventMobi, we’ve noticed significant improvements as a result of having a well defined style guide. Most notably: improved designer-to-developer communications.</p>
-			<h2 id="improved-designer-to-developer-communications">Improved Designer-to-Developer Communications</h2>
-			<p>In recent years, designers and developers have been flooded with tools to improve cross-functional communication. These tools attempt to take a lot of the manual work out of creating detailed, annotated design documents — the standard approach for delivering designs to developers. For example, <a href="https://support.invisionapp.com/hc/en-us/articles/207950906-Introduction-to-Inspect">InVision’s Inspect</a> promises to help deliver pixel-perfect measurements and details to developers. It even generates CSS for you!</p>
-			<p>Although these tools often promise the world, they frequently fall short in these two areas:</p>
-			<ul>
-			<li>Focus entirely on making the designer’s job easier without any regard for the workload of the developer.</li>
-			<li>Assume products are created as one-off pages, rather than being built from a series of reusable components.</li>
-			</ul>
-			<h2 id="shifting-responsibilities">Shifting Responsibilities</h2>
-			<p>We’ve gradually observed a shift in the developer’s role–from being solely focused on either frontend or backend development to a more versatile full-stack role–allowing them to handle both sides of development.</p>
-			<p>Avoiding the constant twisting and tweaking of frontend code to fit the backend is the main benefit of having full-stack developers. Instead, the frontend and backend are developed in tandem and now complement each other. This has moved the line of responsibilities, and has expanded what is expected of a single developer.</p>
-			<p>The challenge is that many full-stack developers are self-declared amateurs when it comes to CSS. In an effort to ease some of their responsibilities, at EventMobi we encourage our designers to take full ownership of CSS. This ensures that the people whose day-to-day work is directly affected by CSS are the same people invested in CSS best practices.</p>
-			<p>Designers’ ownership of CSS gives us a number of additional advantages:</p>
-			<ul>
-			<li>There is no design hand-off. This eliminates a lot of wasted communication and lost productivity.</li>
-			<li>Designers have full control of every pixel in the final product. They can make adjustments without any developer involvement.</li>
-			<li>Since our designers must now think in terms of components, this helps reinforce our process and aids in communication with developers who are already building products with components.</li>
-			</ul>
-			<h2 id="building-products-like-lego">Building Products Like Lego</h2>
-			<p>Our style guide is built using the <a href="http://atomicdesign.bradfrost.com/chapter-2/">principles of atomic design</a>. Instead of designing individual pages, our designers work with smaller pieces of UI referred to as components. You can think of components as individual Lego blocks, each one reusable and designed for a specific task. These components can be combined in various combinations to create an infinite number of pages. Components allow our designers to discuss a design in terms of the building blocks used.</p>
-			<p>As a result, our designer-developer conversations are more focused on product and the value it’s delivering to customers, rather than the time-consuming discussions around intended padding or font sizes.</p>
-			<p>By placing ownership of CSS with designers we ensure consistency of the components that are used during the design phase. Plus, developers no longer have to interpret a designer’s intent.</p>
-			<h2 id="flipping-style-guide-ownership">Flipping Style Guide Ownership</h2>
-			<p>A style guide’s relevance is directly proportional to the amount of attention it receives. A guide in disrepair quickly becomes a neglected guide. Neglect leads to a feeling of indifference, allowing exceptions to be introduced without receiving the scrutiny they require to keep the style guide useful. In such cases, a style guide may even be abandoned completely.</p>
-			<p>In the early days of style guides you might have maintained two separate sets of CSS code: one for production and a second for the style guide. Syncing the two was a nightmare. As the need for style guides became more apparent and accepted, tools emerged to help manage the process and even <a href="http://warpspire.com/kss/">automatically generate style guides</a> from production code. With this approach, developers own the style guide, which is the opposite of what we actually want.</p>
-			<p>Our solution is to flip the ownership. Our style guide code becomes our production code. The CSS written for our style guide is published to a private <a href="https://www.npmjs.com/">NPM package</a> and included as a dependency in our development environments. This completely eliminates duplicated work and it properly aligns the ownership of elements. Designers own the patterns. Developers own the functionality. In order for a change or new component to make it to production, our designers must update the style guide.</p>
-			<p>It also has the added benefit of allowing us to reuse the patterns in multiple projects. For example, our internal tools team uses the same set of components and styles for some of our developer tools because it is easy for them to simply include the NPM package as a dependency. It’s a win-win for everyone involved.</p>
-			<h2 id="ownership-and-maintenance">Ownership and Maintenance</h2>
-			<p>Style guides offer design teams numerous advantages like consistency and cohesion. To thrive, though, dedicated resources are required. By adjusting how we approach style guides, we can lessen the maintenance workload and get maximum value from style guides in the designer-to-developer handoff.</p>
-			
-						<footer>
-							<p class="u-tiny-text">Published on <time datetime="2016-10-24T09:11:00-04:00">October 24, 2016</time></p>
-						</footer>
-					</article>
-					<footer class="c-footer u-clearfix">
-						<nav class="c-nav u-tiny-text">
-							<p class="u-screen-reader-text">Follow me on social media</p>
-							<ul class="o-list-inline">
-									<li class="c-nav__item o-list-inline__item">
-										<a href="https://twitter.com/philbuchanan" class="c-nav__link">Twitter</a>
-									</li>
-									<li class="c-nav__item o-list-inline__item">
-										<a href="https://github.com/philbuchanan" class="c-nav__link">GitHub</a>
-									</li>
-									<li class="c-nav__item o-list-inline__item">
-										<a href="https://www.linkedin.com/in/philipbuchanan/" class="c-nav__link">LinkedIn</a>
-									</li>
-									<li class="c-nav__item o-list-inline__item">
-										<a href="mailto:info@philbuchanan.com" class="c-nav__link">info@philbuchanan.com</a>
-									</li>
-							</ul>
-						</nav>
-					</footer>
-				</div>
+		<header class="c-site-header">
+			<nav class="c-breadcrumbs" aria-label="Breadcrumb">
+				<ol class="o-list-bare c-breadcrumbs__list">
+					<li class="c-breadcrumbs__item"><a href="/">Home</a></li>
+					<li><span aria-current="page">Take Ownership of Your Design with Living Style Guides</span></li>
+				</ol>
+			</nav>
+		</header>
+		<main class="c-main-content">
+			<article>
+				<header>
+					<h1>Take Ownership of Your Design with Living Style Guides</h1>
+				</header>
+				<p>Lots has been written about the <a href="http://atomicdesign.bradfrost.com/chapter-1/">value of style guides</a>. I’ll assume you’ve read the whys and wherefores, so I’ll spare you the pitch. What I will tell you, is that at EventMobi, we’ve noticed significant improvements as a result of having a well defined style guide. Most notably: improved designer-to-developer communications.</p>
+				<h2>Improved Designer-to-Developer Communications</h2>
+				<p>In recent years, designers and developers have been flooded with tools to improve cross-functional communication. These tools attempt to take a lot of the manual work out of creating detailed, annotated design documents — the standard approach for delivering designs to developers. For example, <a href="https://support.invisionapp.com/hc/en-us/articles/207950906-Introduction-to-Inspect">InVision’s Inspect</a> promises to help deliver pixel-perfect measurements and details to developers. It even generates CSS for you!</p>
+				<p>Although these tools often promise the world, they frequently fall short in these two areas:</p>
+				<ul>
+					<li>Focus entirely on making the designer’s job easier without any regard for the workload of the developer.</li>
+					<li>Assume products are created as one-off pages, rather than being built from a series of reusable components.</li>
+				</ul>
+				<h2>Shifting Responsibilities</h2>
+				<p>We’ve gradually observed a shift in the developer’s role–from being solely focused on either frontend or backend development to a more versatile full-stack role–allowing them to handle both sides of development.</p>
+				<p>Avoiding the constant twisting and tweaking of frontend code to fit the backend is the main benefit of having full-stack developers. Instead, the frontend and backend are developed in tandem and now complement each other. This has moved the line of responsibilities, and has expanded what is expected of a single developer.</p>
+				<p>The challenge is that many full-stack developers are self-declared amateurs when it comes to CSS. In an effort to ease some of their responsibilities, at EventMobi we encourage our designers to take full ownership of CSS. This ensures that the people whose day-to-day work is directly affected by CSS are the same people invested in CSS best practices.</p>
+				<p>Designers’ ownership of CSS gives us a number of additional advantages:</p>
+				<ul>
+					<li>There is no design hand-off. This eliminates a lot of wasted communication and lost productivity.</li>
+					<li>Designers have full control of every pixel in the final product. They can make adjustments without any developer involvement.</li>
+					<li>Since our designers must now think in terms of components, this helps reinforce our process and aids in communication with developers who are already building products with components.</li>
+				</ul>
+				<h2>Building Products Like Lego</h2>
+				<p>Our style guide is built using the <a href="http://atomicdesign.bradfrost.com/chapter-2/">principles of atomic design</a>. Instead of designing individual pages, our designers work with smaller pieces of UI referred to as components. You can think of components as individual Lego blocks, each one reusable and designed for a specific task. These components can be combined in various combinations to create an infinite number of pages. Components allow our designers to discuss a design in terms of the building blocks used.</p>
+				<p>As a result, our designer-developer conversations are more focused on product and the value it’s delivering to customers, rather than the time-consuming discussions around intended padding or font sizes.</p>
+				<p>By placing ownership of CSS with designers we ensure consistency of the components that are used during the design phase. Plus, developers no longer have to interpret a designer’s intent.</p>
+				<h2>Flipping Style Guide Ownership</h2>
+				<p>A style guide’s relevance is directly proportional to the amount of attention it receives. A guide in disrepair quickly becomes a neglected guide. Neglect leads to a feeling of indifference, allowing exceptions to be introduced without receiving the scrutiny they require to keep the style guide useful. In such cases, a style guide may even be abandoned completely.</p>
+				<p>In the early days of style guides you might have maintained two separate sets of CSS code: one for production and a second for the style guide. Syncing the two was a nightmare. As the need for style guides became more apparent and accepted, tools emerged to help manage the process and even <a href="http://warpspire.com/kss/">automatically generate style guides</a> from production code. With this approach, developers own the style guide, which is the opposite of what we actually want.</p>
+				<p>Our solution is to flip the ownership. Our style guide code becomes our production code. The CSS written for our style guide is published to a private <a href="https://www.npmjs.com/">NPM package</a> and included as a dependency in our development environments. This completely eliminates duplicated work and it properly aligns the ownership of elements. Designers own the patterns. Developers own the functionality. In order for a change or new component to make it to production, our designers must update the style guide.</p>
+				<p>It also has the added benefit of allowing us to reuse the patterns in multiple projects. For example, our internal tools team uses the same set of components and styles for some of our developer tools because it is easy for them to simply include the NPM package as a dependency. It’s a win-win for everyone involved.</p>
+				<h2>Ownership and Maintenance</h2>
+				<p>Style guides offer design teams numerous advantages like consistency and cohesion. To thrive, though, dedicated resources are required. By adjusting how we approach style guides, we can lessen the maintenance workload and get maximum value from style guides in the designer-to-developer handoff.</p>
+				<footer class="c-post-footer">
+					<p>
+						Published on <time datetime="2016-10-24T09:11:00-04:00">October 24, 2016</time>
+					</p>
+				</footer>
+			</article>
 		</main>
+		<footer class="c-site-footer">
+			<nav class="c-nav">
+				<p class="u-sr-only">Follow me on social media</p>
+				<ul class="c-nav__list o-list-bare">
+					<li class="c-nav__item">
+						<a href="https://twitter.com/philbuchanan" class="c-nav__link">Twitter</a>
+					</li>
+					<li class="c-nav__item">
+						<a href="https://github.com/philbuchanan" class="c-nav__link">GitHub</a>
+					</li>
+					<li class="c-nav__item">
+						<a href="https://www.linkedin.com/in/philipbuchanan/" class="c-nav__link">LinkedIn</a>
+					</li>
+					<li class="c-nav__item">
+						<a href="mailto:info@philbuchanan.com" class="c-nav__link">info@philbuchanan.com</a>
+					</li>
+				</ul>
+			</nav>
+		</footer>
 	</body>
 </html>
