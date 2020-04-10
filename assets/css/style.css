@@ -56,7 +56,7 @@ html {
 html {
   color: #444;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.75;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -80,6 +80,12 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+}
+
+@media screen and (min-width: 28rem) {
+  html {
+    font-size: 18px;
+  }
 }
 
 @media screen and (min-width: 44rem) {
@@ -204,6 +210,7 @@ img {
 
 .c-nav__list {
   display: flex;
+  flex-wrap: wrap;
   font-size: 0.75rem;
 }
 
@@ -219,6 +226,13 @@ img {
 
 .c-breadcrumbs__list {
   display: flex;
+}
+
+.c-breadcrumbs__item:last-child {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .c-breadcrumbs__item:not(:last-child):after {
