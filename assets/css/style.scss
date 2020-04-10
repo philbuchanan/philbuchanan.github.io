@@ -348,6 +348,47 @@ img {
 
 
 
+// # Dark Mode
+// -----------------------------------------------------------------------------
+
+@media (prefers-color-scheme: dark) {
+	html {
+		color: #eee;
+		background-color: #222;
+
+		&:after {
+			background: linear-gradient($color-green, #0038ba);
+		}
+	}
+
+	a {
+		color: $color-green;
+	}
+
+	.o-list-ruled {
+		li {
+			&:not(:last-child) {
+				border-bottom-color: #444;
+			}
+		}
+	}
+
+	.c-site-header {
+		border-bottom-color: #444;
+	}
+
+	.c-site-footer {
+		border-top-color: #444;
+	}
+
+	.c-post-footer,
+	.c-breadcrumbs {
+		color: #898989;
+	}
+}
+
+
+
 // # Print Styles
 // -----------------------------------------------------------------------------
 

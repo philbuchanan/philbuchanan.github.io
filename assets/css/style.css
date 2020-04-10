@@ -259,6 +259,32 @@ img {
   margin-bottom: 0 !important;
 }
 
+@media (prefers-color-scheme: dark) {
+  html {
+    color: #eee;
+    background-color: #222;
+  }
+  html:after {
+    background: linear-gradient(#34e3bd, #0038ba);
+  }
+  a {
+    color: #34e3bd;
+  }
+  .o-list-ruled li:not(:last-child) {
+    border-bottom-color: #444;
+  }
+  .c-site-header {
+    border-bottom-color: #444;
+  }
+  .c-site-footer {
+    border-top-color: #444;
+  }
+  .c-post-footer,
+  .c-breadcrumbs {
+    color: #898989;
+  }
+}
+
 @media print {
   html {
     font-size: 12px;
