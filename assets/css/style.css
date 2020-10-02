@@ -181,6 +181,16 @@ img {
   vertical-align: middle;
 }
 
+figure {
+  margin-bottom: 2.666666rem;
+}
+
+figcaption {
+  font-size: 0.8125rem;
+  font-style: italic;
+  margin-top: 0.6666665rem;
+}
+
 button {
   display: inline-block;
   color: #eee;
@@ -352,6 +362,10 @@ button:focus, button:hover {
 
   a {
     color: #34e3bd;
+  }
+
+  ul {
+    list-style: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="19" height="15" viewBox="0 0 19 15" fill="%23bababa"><polygon points="8.64 2.14 7.93 2.84 13.09 8 0 8 0 9 13.09 9 7.93 14.16 8.64 14.86 15 8.5 8.64 2.14"/></svg>');
   }
 
   .o-list-ruled li:not(:last-child) {
