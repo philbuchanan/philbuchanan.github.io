@@ -260,7 +260,8 @@ figcaption {
 // ## Forms
 // -----------------------------------------------------------------------------
 
-button {
+button,
+.c-button {
 	display: inline-block;
 	color: #eee;
 	background-color: $color-blue;
@@ -287,9 +288,9 @@ button {
 
 	&:focus,
 	&:hover {
-		outline: none;
 		color: $color-text;
 		background-color: $color-green;
+		text-decoration: none;
 	}
 }
 
@@ -394,7 +395,9 @@ button {
 	display: flex;
 	flex-wrap: nowrap;
 
-	button {
+	button,
+	.c-button {
+		display: block;
 		flex: 1 1 auto;
 		border-radius: 0;
 		max-width: 33.333333%;

@@ -9,7 +9,6 @@
 		<link rel="stylesheet" href="/assets/css/style.css">
 		<link rel="icon" type="image/png" href="/assets/logos/favicon.png">
 		<link rel="apple-touch-icon" sizes="180x180" href="/assets/logos/icon-180.png">
-		<script src="https://js.stripe.com/v3/"></script>
 	</head>
 	<body class="is-home">
 		<header class="c-site-header">
@@ -24,41 +23,10 @@
 		</header>
 		<main class="c-main-content">
 			<article>
-				<header class="c-section">
-					<div class="c-slug">Phil Buchanan</div>
-					<h1>Support Future Development</h1>
-					<p>Creating quality open source software requires a great deal of my time and effort. By making a small donation, you can help support future development, and I can continue improving it.</p>
-					<div id="error-message"></div>
-				</header>
-				<section class="c-section">
-					<h2 class="c-h3">One-Time Donation</h2>
-					<div class="c-button-group">
-						<button data-checkout-mode="payment" data-price-id="price_1H9WIeDec1m3wCFzezlHCk1f">
-							$10
-						</button>
-						<button data-checkout-mode="payment" data-price-id="price_1H9WJYDec1m3wCFzakg4PvnT">
-							$20
-						</button>
-						<button data-checkout-mode="payment" data-price-id="price_1H9WKFDec1m3wCFz0BsTxbQH">
-							$50
-						</button>
-					</div>
-				</section>
-				<section class="c-section">
-					<h2 class="c-h3">Monthly Recurring Donation</h2>
-					<div class="c-button-group">
-						<button data-checkout-mode="subscription" data-price-id="price_1H9WKjDec1m3wCFzWENELghj">
-							$10 / Month
-						</button>
-						<button data-checkout-mode="subscription" data-price-id="price_1H9WLPDec1m3wCFz248n1FEZ">
-							$20 / Month
-						</button>
-						<button data-checkout-mode="subscription" data-price-id="price_1H9WLuDec1m3wCFz3fpGyZUT">
-							$50 / Month
-						</button>
-					</div>
-				</section>
-				<p><small>Donation amounts are in CAD. You will be redirected to <a href="https://stripe.com/">Stripe</a>—my secure payment processor—where you will be prompted for payment information. Monthly recurring donations may be cancelled at any time.</small></p>
+				<div class="c-slug">Phil Buchanan</div>
+				<h1>Support Future Development</h1>
+				<p>Creating quality open source software requires a great deal of my time and effort. By making a small donation you can help support future development.</p>
+				<p><a href="https://paypal.me/devpbuchanan" class="c-button">Donate with PayPal</a></p>
 			</article>
 		</main>
 		<footer class="c-site-footer">
@@ -80,33 +48,5 @@
 				</ul>
 			</nav>
 		</footer>
-		<script>
-			var stripe = Stripe('pk_live_AdiLjEdL0Mcr16OEJuuLg80m');
-
-			var handleResult = function(result) {
-				if (result.error) {
-					var displayError = document.getElementById('error-message');
-					displayError.textContent = result.error.message;
-				}
-			};
-
-			document.querySelectorAll('button').forEach(function(button) {
-				button.addEventListener('click', function (e) {
-					var mode = e.target.dataset.checkoutMode;
-					var priceId = e.target.dataset.priceId;
-					var items = [{
-						price: priceId,
-						quantity: 1,
-					}];
-
-					stripe.redirectToCheckout({
-						mode: mode,
-						lineItems: items,
-						successUrl: 'https://philbuchanan.com/donate/success.html?session_id={CHECKOUT_SESSION_ID}',
-						cancelUrl: 'https://philbuchanan.com/donate/cancelled.html?session_id={CHECKOUT_SESSION_ID}',
-					}).then(handleResult);
-				});
-			});
-		</script>
 	</body>
 </html>
