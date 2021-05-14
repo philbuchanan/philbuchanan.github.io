@@ -49,8 +49,20 @@
 						<button id="js-theme-switcher-button" class="o-button-bare c-theme-switcher-button">
 							<span class="u-sr-only">Toggle theme</span>
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" role="img" aria-hidden="true" focusable="false">
-								<path d="M8,0a8,8,0,1,0,8,8A8,8,0,0,0,8,0Z"/>
-								<path d="M2.37,4.75a6.51,6.51,0,0,0,2.38,8.88l6.5-11.26A6.5,6.5,0,0,0,2.37,4.75Z" class="c-theme-switcher-button__inner"/>
+								<g class="light">
+									<circle class="sun" cx="8" cy="8" r="3.75"/>
+									<circle class="segment-1" cx="8" cy="1.25" r="1.25"/>
+									<circle class="segment-2" cx="12.77" cy="3.23" r="1.25"/>
+									<circle class="segment-3" cx="14.75" cy="8" r="1.25"/>
+									<circle class="segment-4" cx="12.77" cy="12.77" r="1.25"/>
+									<circle class="segment-5" cx="8" cy="14.75" r="1.25"/>
+									<circle class="segment-6" cx="3.23" cy="12.77" r="1.25"/>
+									<circle class="segment-7" cx="1.25" cy="8" r="1.25"/>
+									<circle class="segment-8" cx="3.23" cy="3.23" r="1.25"/>
+								</g>
+								<g class="dark">
+									<path class="moon" d="M7,1.81A6,6,0,0,1,7.1,1,7,7,0,1,0,15,8.15a6.93,6.93,0,0,1-1.45.16A6.5,6.5,0,0,1,7,1.81Z"/>
+								</g>
 							</svg>
 						</button>
 					</li>
