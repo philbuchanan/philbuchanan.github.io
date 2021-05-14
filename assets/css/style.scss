@@ -299,6 +299,37 @@ button,
 // # Objects
 // -----------------------------------------------------------------------------
 
+.o-button-bare {
+	display: inline-block;
+	color: inherit;
+	background-color: transparent;
+	text-align: center;
+	vertical-align: middle;
+	font: inherit;
+	text-decoration: none;
+	direction: ltr;
+	border: none;
+	border-radius: 0;
+	width: auto;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	transition: 0s;
+	box-shadow: none;
+	overflow: auto;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+			appearance: none;
+
+	&:focus,
+	&:hover {
+		color: inherit;
+		background-color: transparent;
+		text-decoration: none;
+	}
+}
+
 .o-list-bare {
 	list-style: none;
 	margin-left: 0;
@@ -351,12 +382,20 @@ button,
 .c-nav__list {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: center;
 	font-size: 0.75rem;
 }
 
 .c-nav__item {
 	&:not(:last-child) {
 		margin-right: $spacing;
+	}
+
+}
+
+@media screen and (min-width: 600px) {
+	.c-nav__item.is-theme-switcher {
+		margin-left: auto;
 	}
 }
 
@@ -418,6 +457,29 @@ button,
 	}
 }
 
+.c-theme-switcher-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 24px;
+	height: 24px;
+
+	&:hover {
+		.c-theme-switcher-button__inner {
+			fill: $color-text;
+		}
+	}
+
+	svg {
+		fill: $color-text;
+	}
+
+	.c-theme-switcher-button__inner {
+		fill: #fff;
+		transition: fill 0.2s;
+	}
+}
+
 
 
 // ## Resume
@@ -468,21 +530,20 @@ button,
 // # Dark Mode
 // -----------------------------------------------------------------------------
 
-@media (prefers-color-scheme: dark) {
-	html {
-		color: #eee;
-		background-color: #222;
+html[data-theme="dark"] {
+	color: #eee;
+	background-color: #222;
 
-		&:after {
-			background: linear-gradient($color-green, #0038ba);
-		}
+	&:after {
+		background: linear-gradient($color-green, #0038ba);
 	}
+
 
 	a {
 		color: $color-green;
 	}
 
-	ul {
+	ul:not(.o-list-bare) {
 		list-style: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="19" height="15" viewBox="0 0 19 15" fill="%23bababa"><polygon points="8.64 2.14 7.93 2.84 13.09 8 0 8 0 9 13.09 9 7.93 14.16 8.64 14.86 15 8.5 8.64 2.14"/></svg>');
 	}
 
@@ -505,6 +566,22 @@ button,
 	.c-post-footer,
 	.c-breadcrumbs {
 		color: #898989;
+	}
+
+	.c-theme-switcher-button {
+		&:hover {
+			.c-theme-switcher-button__inner {
+				fill: #eee;
+			}
+		}
+
+		svg {
+			fill: currentcolor;
+		}
+
+		.c-theme-switcher-button__inner {
+			fill: #222;
+		}
 	}
 }
 
