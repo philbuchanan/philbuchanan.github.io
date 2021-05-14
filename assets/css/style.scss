@@ -464,19 +464,16 @@ button,
 	width: 24px;
 	height: 24px;
 
-	&:hover {
-		.c-theme-switcher-button__inner {
-			fill: $color-text;
-		}
-	}
-
 	svg {
-		fill: $color-text;
+		fill: currentColor;
 	}
 
-	.c-theme-switcher-button__inner {
-		fill: #fff;
-		transition: fill 0.2s;
+	.light {
+		display: none;
+	}
+
+	.dark {
+		display: block;
 	}
 }
 
@@ -538,7 +535,6 @@ html[data-theme="dark"] {
 		background: linear-gradient($color-green, #0038ba);
 	}
 
-
 	a {
 		color: $color-green;
 	}
@@ -569,18 +565,12 @@ html[data-theme="dark"] {
 	}
 
 	.c-theme-switcher-button {
-		&:hover {
-			.c-theme-switcher-button__inner {
-				fill: #eee;
-			}
+		.light {
+			display: block;
 		}
 
-		svg {
-			fill: currentcolor;
-		}
-
-		.c-theme-switcher-button__inner {
-			fill: #222;
+		.dark {
+			display: none;
 		}
 	}
 }
