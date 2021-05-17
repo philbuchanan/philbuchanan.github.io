@@ -464,8 +464,15 @@ button,
 	width: 24px;
 	height: 24px;
 
+	&:hover {
+		svg {
+			fill: $color-blue;
+		}
+	}
+
 	svg {
-		fill: currentColor;
+		fill: $color-text;
+		transition: fill 0.2s;
 	}
 
 	.light {
@@ -565,6 +572,10 @@ html[data-theme="dark"] {
 	}
 
 	.c-theme-switcher-button {
+		svg {
+			fill: #eee;
+		}
+
 		.light {
 			display: block;
 		}
