@@ -153,6 +153,10 @@ body {
 	}
 }
 
+[hidden="true"] {
+	display: none;
+}
+
 
 
 // ## Typography
@@ -257,45 +261,6 @@ figcaption {
 
 
 
-// ## Forms
-// -----------------------------------------------------------------------------
-
-button,
-.c-button {
-	display: inline-block;
-	color: #eee;
-	background-color: $color-blue;
-	text-align: center;
-	vertical-align: middle;
-	font: inherit;
-	font-size: 0.888888rem;
-	font-weight: bold;
-	text-decoration: none;
-	direction: ltr;
-	border: none;
-	border-radius: 4px;
-	width: auto;
-	height: auto;
-	margin: 0;
-	padding: $spacing-xs $spacing-md;
-	cursor: pointer;
-	transition: color 0.2s, background-color 0.2s;
-	box-shadow: none;
-	overflow: auto;
-	-webkit-appearance: none;
-	   -moz-appearance: none;
-	        appearance: none;
-
-	&:focus,
-	&:hover {
-		color: $color-text;
-		background-color: $color-green;
-		text-decoration: none;
-	}
-}
-
-
-
 // # Objects
 // -----------------------------------------------------------------------------
 
@@ -303,8 +268,8 @@ button,
 	display: inline-block;
 	color: inherit;
 	background-color: transparent;
-	text-align: center;
-	vertical-align: middle;
+	text-align: left;
+	vertical-align: baseline;
 	font: inherit;
 	text-decoration: none;
 	direction: ltr;
@@ -340,13 +305,52 @@ button,
 }
 
 .o-list-ruled {
-	li {
+	> li {
 		padding-top: $spacing-md;
 		padding-bottom: $spacing-md;
 
 		&:not(:last-child) {
 			border-bottom: 1px solid $color-grey-90;
 		}
+	}
+}
+
+
+
+// ## Forms
+// -----------------------------------------------------------------------------
+
+button,
+.c-button {
+	display: inline-block;
+	color: #eee;
+	background-color: $color-blue;
+	text-align: center;
+	vertical-align: middle;
+	font: inherit;
+	font-size: 0.888888rem;
+	font-weight: bold;
+	text-decoration: none;
+	direction: ltr;
+	border: none;
+	border-radius: 4px;
+	width: auto;
+	height: auto;
+	margin: 0;
+	padding: $spacing-xs $spacing-md;
+	cursor: pointer;
+	transition: color 0.2s, background-color 0.2s;
+	box-shadow: none;
+	overflow: auto;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+			appearance: none;
+
+	&:focus,
+	&:hover {
+		color: $color-text;
+		background-color: $color-green;
+		text-decoration: none;
 	}
 }
 
@@ -493,18 +497,44 @@ button,
 	line-height: 1.4;
 }
 
-.c-resume__details {
+.c-resume__overview {
 	> :last-child {
 		margin-bottom: 0;
 	}
 }
 
-@media screen and (min-width: 504px) {
-	.c-resume {
-		display: flex;
+.c-resume__details {
+	margin-top: 1rem;
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+.c-resume__details-button {
+	color: $color-blue;
+	text-decoration: underline;
+	font-size: 0.777777rem;
+
+	&:focus {
+		color: $color-blue;
+		text-decoration: underline;
 	}
 
-	.c-resume__date {
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+@media screen and (min-width: 504px) {
+	.c-resume,
+	.c-resume__header {
+		display: flex;
+		align-items: baseline;
+	}
+
+	.c-resume__date,
+	.c-resume__title {
 		flex: 0 0 auto;
 		width: 9rem;
 		margin-right: 1.5rem;
@@ -571,6 +601,14 @@ html[data-theme="dark"] {
 		color: #898989;
 	}
 
+	.c-resume__details-button {
+		color: $color-green;
+
+		&:focus {
+			color: $color-green;
+		}
+	}
+
 	.c-theme-switcher-button {
 		svg {
 			fill: #eee;
@@ -595,6 +633,10 @@ html[data-theme="dark"] {
 	html {
 		font-size: 12px;
 		line-height: 1.25;
+	}
+
+	body {
+		max-width: 100%;
 	}
 
 	a {
@@ -623,5 +665,9 @@ html[data-theme="dark"] {
 
 	.u-no-print {
 		display: none;
+	}
+
+	[hidden="true"] {
+		display: block !important;
 	}
 }
