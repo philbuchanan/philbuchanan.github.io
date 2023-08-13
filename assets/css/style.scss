@@ -448,6 +448,37 @@ button,
 	}
 }
 
+.c-book {
+	line-height: 1.4;
+}
+
+.c-book__author,
+.c-book__rating {
+	margin-bottom: 0;
+}
+
+.c-book__cover {
+	display: none;
+}
+
+.c-book__rating {
+	letter-spacing: 0.1em;
+	margin-top: 0.5em;
+}
+
+@media screen and (min-width: 504px) {
+	.c-book {
+		display: flex;
+	}
+
+	.c-book__cover {
+		display: block;
+		flex: 0 0 auto;
+		width: 4.5rem;
+		margin-right: 1.5rem;
+	}
+}
+
 .u-sr-only {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute;
@@ -459,6 +490,10 @@ button,
 
 .u-no-margin-bottom {
 	margin-bottom: 0 !important;
+}
+
+.u-no-wrap {
+	white-space: nowrap !important;
 }
 
 html[data-theme="dark"] {
