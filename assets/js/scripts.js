@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			setTheme('dark', false);
 		}
 
-		themeSwitcherBtn.addEventListener('click', function(event) {
+		themeSwitcherBtn.addEventListener('click', function() {
 			setTheme(theme === 'dark' ? 'light' : 'dark', true);
 		});
 	}
