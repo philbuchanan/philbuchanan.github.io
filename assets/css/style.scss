@@ -732,6 +732,12 @@ html[data-theme="dark"] {
 		background: linear-gradient(var(--color--primary), #0038ba);
 	}
 
+	h1 {
+		background: -webkit-linear-gradient(315deg, var(--color--primary), var(--color--secondary));
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
 	ul:not(.o-list-bare) {
 		list-style: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="19" height="15" viewBox="0 0 19 15" fill="%23bababa"><polygon points="8.64 2.14 7.93 2.84 13.09 8 0 8 0 9 13.09 9 7.93 14.16 8.64 14.86 15 8.5 8.64 2.14"/></svg>');
 	}
