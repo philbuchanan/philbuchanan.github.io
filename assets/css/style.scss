@@ -454,6 +454,10 @@ button,
 
 .c-section {
 	margin-bottom: var(--spacing--xl);
+
+	> :last-child {
+		margin-bottom: 0;
+	}
 }
 
 .c-section--divided {
@@ -621,8 +625,17 @@ button,
 	}
 }
 
-.c-resume {
+.c-resume,
+.c-book {
 	line-height: 1.4;
+
+	&:first-child {
+		padding-top: 0;
+	}
+
+	&:last-child {
+		padding-bottom: 0;
+	}
 }
 
 .c-resume__details {
@@ -641,10 +654,6 @@ button,
 		width: 9rem;
 		margin-right: 1.5rem;
 	}
-}
-
-.c-book {
-	line-height: 1.4;
 }
 
 .c-book__author,
