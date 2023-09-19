@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+	<head>
+		<meta charset="utf-8">
+		<title>Portfolio | Phil Buchanan</title>
+		<meta name="description" content="Phil Buchanan’s Portfolio | Tetra Trust Wire Transfers">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="Phil Buchanan">
+		<meta name="robots" content="noindex">
+		<link rel="stylesheet" href="/assets/css/style.css">
+		<link rel="icon" type="image/png" href="/assets/logos/favicon.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/logos/icon-180.png">
+	</head>
+	<body>
+		<div class="o-container">
+			<header class="c-site-header">
+				<nav class="c-breadcrumbs" aria-label="Breadcrumb">
+					<ol class="o-list-bare c-breadcrumbs__list">
+						<li class="c-breadcrumbs__item"><a href="/">Home</a></li>
+						<li class="c-breadcrumbs__item"><a href="/portfolio/">Portfolio</a></li>
+						<li class="c-breadcrumbs__item">
+							<span aria-current="page">Instructing Wire Transfers</span>
+						</li>
+					</ol>
+				</nav>
+			</header>
+		</div>
+		<main class="c-main-content">
+			<article class="c-project">
+				<div class="o-container">
+					<header class="c-project__header">
+						<h1>Instructing Wire Transfers</h1>
+					</header>
+					<p>The digital asset industry still heavily relies on traditional financial systems—particularly wire transfers—to convert fiat into digital assets and vice versa.</p>
+					<p>Tetra’s customers conduct wire transfers on a daily basis, but unlike digital assets these services are only available during set business hours. In order for a wire to be sent on a particular day it must be instructed (Tetra’s customer must provide all necessary details to Tetra) prior to Tetra’s wire cut-off time at 15:30 EST/EDT. Tetra’s customers span several timezones across Canada, which has resulted in missed wire transfers causing delays in settlement.</p>
+					<p>Tetra wanted to improve two aspects of the wire transfer experience: ① reduce missed cut-off times; and ② simplify the wire transfer initiation process.</p>
+					<h2>Reducing Missed Cut-Off Times</h2>
+					<p>The banking section of the customer portal was modified to prominently display a countdown in the user’s timezone of time remaining until that day’s cut-off time. The alert changed to indicate increased urgency to Tetra’s customers as the cut-off time approached.</p>
+				</div>
+				<div class="o-container o-container--sm">
+					<figure class="c-wires-image-wrapper">
+						<div class="c-wires-image-group">
+							<img src="/assets/images/portfolio/tetra/wires/banking.webp" loading="lazy" width="564" height="391" class="c-wires-image c-wires-image-cut-off" alt="Wire instruction interface, showing countdown of remaining time until the day’s cut-off time">
+							<div class="c-wires-image-alerts">
+								<img src="/assets/images/portfolio/tetra/wires/short-on-time.webp" class="c-wires-image-alert" loading="lazy" width="365" height="47" alt="Alert saying today’s cut-off time is in 55 minutes, 4 seconds.">
+								<img src="/assets/images/portfolio/tetra/wires/out-of-time.webp" class="c-wires-image-alert" loading="lazy" width="365" height="47" alt="Alert saying you have missed today’s cut-off time.">
+								<img src="/assets/images/portfolio/tetra/wires/weekend-time.webp" class="c-wires-image-alert" loading="lazy" width="365" height="47" alt="Alert saying wires cannot be instructed on weekends.">
+							</div>
+						</div>
+						<figcaption class="o-container c-wires-image-caption">
+							Interface displays a countdown in the user’s timezone of time remaining until the day’s cut-off time. Alerts change throughout the day based on the current status.
+						</figcaption>
+					</figure>
+				</div>
+				<div class="o-container o-container--lg">
+					<div class="c-image-text-split">
+						<div class="c-image-text-split__text">
+							<h2>Simplify the Wire Transfer Process</h2>
+							<p>The process of instructing wires was also archaic, involving filling out Excel or PDF forms, getting them signed by authorized users, and emailing them to the operations team. This process required the operations team to closely monitor their email, forcing regular context switching and reducing their productivity. Changes to information gathering requirements meant updating the form design and informing all Tetra customers about the change. Tetra regularly received old forms, requiring resubmission using the new form and getting all new signatures.</p>
+							<p>A new wire instruction wizard was created to automate the submission of wire instructions, including gathering signatures. Once an instruction form was successfully submitted, an email notification was sent to users who’s signatures were required. Once all signatures were obtained, the operations team received a Slack notification with the wire instructions.</p>
+						</div>
+						<div class="c-image-text-split__image" style="max-width: 476px">
+							<figure class="u-center">
+								<img src="/assets/images/portfolio/tetra/wires/instruct-a-wire.webp" alt="Collecting wire instructions via a web form" loading="lazy" width="476" height="578" class="c-wires-image">
+								<figcaption class="o-container">Customer’s enter wire instructions via a form.</figcaption>
+							</figure>
+						</div>
+					</div>
+				</div>
+				<div class="o-container">
+					<p>An interface was created to display the current status of pending wire transfers. Authorized signatories could also approve wire transfers directly in the interface.</p>
+				</div>
+				<div class="o-container o-container--sm">
+					<figure>
+						<img src="/assets/images/portfolio/tetra/wires/pending-wires.webp" alt="Table showing two pending wire transfers, one requiring approval from signatories." loading="lazy" width="838" height="258" class="c-wires-image u-center">
+						<figcaption class="o-container">Wire transfers requiring approval can be seen in the customer portal. Authorized signatories may approve directly in the interface.</figcaption>
+					</figure>
+				</div>
+				<div class="o-container">
+					<p>The new wire transfer experience was a huge success, completely eliminating missed wire transfers due to missed cut-off times or incorrect forms being used. Future planned improvements involve automatically initiating wire transfers through Tetra’s banking partner portal.</p>
+					<p class="c-slug">Involvement: Product, Design, Frontend Development • HTML, CSS, TypeScript, React.js</p>
+				</div>
+			</article>
+		</main>
+		<div class="o-container">
+			<footer class="c-site-footer">
+				<nav class="c-nav">
+					<p class="u-sr-only">Follow me on social media</p>
+					<ul class="c-nav__list o-list-bare">
+						<li class="c-nav__item">
+							<a href="mailto:info@philbuchanan.com" class="c-nav__link">Email</a>
+						</li>
+						<li class="c-nav__item">
+							<a href="https://www.linkedin.com/in/philipbuchanan/" class="c-nav__link">LinkedIn</a>
+						</li>
+						<li class="c-nav__item">
+							<a href="https://github.com/philbuchanan" class="c-nav__link">GitHub</a>
+						</li>
+						<li class="c-nav__item">
+							<a rel="me" href="https://mastodon.social/@philbuchanan" class="c-nav__link">Mastodon</a>
+						</li>
+						<li class="c-nav__item is-theme-switcher">
+							<button id="js-theme-switcher-button" class="o-button-bare c-theme-switcher-button">
+								<span class="u-sr-only">Toggle theme</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" role="img" aria-hidden="true" focusable="false">
+									<g class="light">
+										<circle class="sun" cx="8" cy="8" r="3.75"/>
+										<circle class="segment-1" cx="8" cy="1.25" r="1.25"/>
+										<circle class="segment-2" cx="12.77" cy="3.23" r="1.25"/>
+										<circle class="segment-3" cx="14.75" cy="8" r="1.25"/>
+										<circle class="segment-4" cx="12.77" cy="12.77" r="1.25"/>
+										<circle class="segment-5" cx="8" cy="14.75" r="1.25"/>
+										<circle class="segment-6" cx="3.23" cy="12.77" r="1.25"/>
+										<circle class="segment-7" cx="1.25" cy="8" r="1.25"/>
+										<circle class="segment-8" cx="3.23" cy="3.23" r="1.25"/>
+									</g>
+									<g class="dark">
+										<path class="moon" d="M7,1.81A6,6,0,0,1,7.1,1,7,7,0,1,0,15,8.15a6.93,6.93,0,0,1-1.45.16A6.5,6.5,0,0,1,7,1.81Z"/>
+									</g>
+								</svg>
+							</button>
+						</li>
+					</ul>
+				</nav>
+			</footer>
+		</div>
+		<script src="/assets/js/scripts.js" defer></script>
+	</body>
+</html>
