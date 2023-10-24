@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+	<head>
+		<meta charset="utf-8">
+		<title>Tetra Trust’s Design System | Portfolio | Phil Buchanan</title>
+		<meta name="description" content="Phil Buchanan’s Portfolio | Design Systems">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="author" content="Phil Buchanan">
+		<meta name="robots" content="noindex">
+		<link rel="stylesheet" href="/assets/css/style.css">
+		<link rel="icon" type="image/png" href="/assets/logos/favicon.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/logos/icon-180.png">
+	</head>
+	<body>
+		<div class="o-container">
+			<header class="c-site-header">
+				<nav class="c-breadcrumbs" aria-label="Breadcrumb">
+					<ol class="o-list-bare c-breadcrumbs__list">
+						<li class="c-breadcrumbs__item"><a href="/">Home</a></li>
+						<li class="c-breadcrumbs__item"><a href="/posts/">Posts</a></li>
+						<li class="c-breadcrumbs__item">
+							<span aria-current="page">Design Systems</span>
+						</li>
+					</ol>
+				</nav>
+			</header>
+		</div>
+		<main class="c-main-content">
+			<article class="c-project">
+				<div class="o-container">
+					<header class="c-project__header">
+						<h1>Tetra Trust’s Design System</h1>
+						<p>A thoughtful design system can unlock a designer’s full potential, allowing them to focus on rich customer experiences rather than specific details of brand implementation and cross-application consistency.</p>
+					</header>
+					<section class="o-island">
+						<p>Tetra’s system is based on a decade of lessons learned building and contributing to design systems at <a href="/posts/take-ownership-of-your-design-with-living-style-guides/">EventMobi</a>, <a href="https://aubsandmugg.com">Aubs & Mugg</a>, and <a href="https://reflectivity.io">Reflectivity</a>. It is comprised of principles, base styles, components, and patterns.</p>
+						<ul>
+							<li>
+								<h2 class="c-h3">Principles</h2>
+								<p>Design principles are the universal beliefs the design team holds. They establish a consistent framework for designers to contribute to the system. Key principles include accessibility, a writing voice and tone guide, function vs. form prioritization, and usability heuristics such as system status visibility and error prevention and recovery.</p>
+							</li>
+							<li>
+								<h2 class="c-h3">Base Styles</h2>
+								<p>Base styles define the design system brand book, including typography, colours, and icons. They are an extension to the broader brand guidelines and are applied to all levels of the component hierarchy.</p>
+							</li>
+							<li>
+								<h2 class="c-h3">Components</h2>
+								<p>Components are the fundamental blocks that combine to form the interface. Components are designed to be as simplistic as possible, doing one thing very well. Individual components often combine many other components.</p>
+							</li>
+							<li>
+								<h2 class="c-h3">Patterns</h2>
+								<p>Patterns provide preferred solutions to common design layouts, for example a table view with filters or an object detail view.</p>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<img src="/assets/images/portfolio/design-systems/layers.svg" alt="Illustrative staked layers of a design system" width="72" height="70" loading="lazy" class="c-icon">
+						<h2>Component Style Layering</h2>
+						<p>The component system is split into five layers of styling, each building upon the layer below.</p>
+						<ul>
+							<li>
+								<h3>0. Element</h3>
+								<p>Each HTML element (<code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;img&gt;</code>, etc.) has a base set of styles. This ensures consistency when HTML elements are used outside components.</p>
+							</li>
+							<li>
+								<h3>1. Object</h3>
+								<p>Objects are agnostic to brand specific visual styles. They may be used repeatedly, layering brand styles as needed for specific contexts. Examples include grids, horizontal and vertical stacks, media objects, boxes, and islands.</p>
+							</li>
+							<li>
+								<h3>2. Component</h3>
+								<p>This layer applies the component and brand specific styles, including fonts, colours, borders, radii, etc.</p>
+							</li>
+							<li>
+								<h3>3. Theme</h3>
+								<p>Themes allow for multiple visual representations of a component based on user preferences, for example light and dark mode. Each component has it’s own set of theme styles, one for each theme supported by the system.</p>
+							</li>
+							<li>
+								<h3>4. Utility</h3>
+								<p>Components occasionally require contextual overrides to very specific styling. This is the purpose of utilities. They are guaranteed to do a single thing, for example removing margins from the bottom of a component. Application of utilities should be scrutinized, as heavy usage may indicate a larger issue with the design system.</p>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Managing Responsiveness</h2>
+						<p>Design systems need to adapt to a wide range of contexts, screen sizes, and environments. When working with responsive styles, there are a number of principles Tetra’s system follows.</p>
+						<ol>
+							<li>Components are primarily built to be context agnostic; they will adapt to their surroundings automatically.</li>
+							<li>Responsive cases are best handled at the pattern level (e.g. page, navigation, or state patterns).</li>
+							<li>There are dedicated components intended for adding responsive properties (e.g. grid component). Using these components is preferred when composing other components that require responsive properties.</li>
+							<li>Only in rare cases should a component require dedicated responsive styles.</li>
+						</ol>
+					</section>
+					<section>
+						<h2>Tooling</h2>
+						<p>Tetra’s design system is built with <a href="https://www.typescriptlang.org">TypeScript</a> using the <a href="https://react.dev">React.js</a> library. TypeScript reduces code errors by ensuring accuracy in types passed to and used by components. Hooks in React.js provide an easy, efficient, and performant method for handling state and lifecycle changes within individual components. Hooks also make the code easier to read and maintain by logically grouping functionality together. CSS in the system is primarily vanilla, leveraging CSS custom properties (variables) for many of the shared properties like spacing and colours. <a href="https://sass-lang.com">Sass</a> is used as a pre-processor in select places to make quick work of applying iterable styles such as defining grid widths, indentation for a tree view, or applying multiple size variants for a component (<code>xs</code>, <code>sm</code>, <code>md</code>, <code>lg</code>, and <code>xl</code>).</p>
+					</section>
+				</div>
+			</article>
+		</main>
+		<div class="o-container">
+			<footer class="c-site-footer">
+				<nav class="c-nav">
+					<p class="u-sr-only">Follow me on social media</p>
+					<ul class="c-nav__list o-list-bare">
+						<li class="c-nav__item">
+							<a href="mailto:info@philbuchanan.com" class="c-nav__link">Email</a>
+						</li>
+						<li class="c-nav__item">
+							<a href="https://www.linkedin.com/in/philipbuchanan/" class="c-nav__link">LinkedIn</a>
+						</li>
+						<li class="c-nav__item">
+							<a href="https://github.com/philbuchanan" class="c-nav__link">GitHub</a>
+						</li>
+						<li class="c-nav__item">
+							<a rel="me" href="https://mastodon.social/@philbuchanan" class="c-nav__link">Mastodon</a>
+						</li>
+						<li class="c-nav__item is-theme-switcher">
+							<button id="js-theme-switcher-button" class="o-button-bare c-theme-switcher-button">
+								<span class="u-sr-only">Toggle theme</span>
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" role="img" aria-hidden="true" focusable="false">
+									<g class="light">
+										<circle class="sun" cx="8" cy="8" r="3.75"/>
+										<circle class="segment-1" cx="8" cy="1.25" r="1.25"/>
+										<circle class="segment-2" cx="12.77" cy="3.23" r="1.25"/>
+										<circle class="segment-3" cx="14.75" cy="8" r="1.25"/>
+										<circle class="segment-4" cx="12.77" cy="12.77" r="1.25"/>
+										<circle class="segment-5" cx="8" cy="14.75" r="1.25"/>
+										<circle class="segment-6" cx="3.23" cy="12.77" r="1.25"/>
+										<circle class="segment-7" cx="1.25" cy="8" r="1.25"/>
+										<circle class="segment-8" cx="3.23" cy="3.23" r="1.25"/>
+									</g>
+									<g class="dark">
+										<path class="moon" d="M7,1.81A6,6,0,0,1,7.1,1,7,7,0,1,0,15,8.15a6.93,6.93,0,0,1-1.45.16A6.5,6.5,0,0,1,7,1.81Z"/>
+									</g>
+								</svg>
+							</button>
+						</li>
+					</ul>
+				</nav>
+			</footer>
+		</div>
+		<script src="/assets/js/scripts.js" defer></script>
+	</body>
+</html>

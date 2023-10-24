@@ -176,7 +176,9 @@ h2 {
 h3,
 .c-h3 {
 	font-size: 1rem;
+	line-height: var(--typography--line-height);
 	font-weight: bold;
+	margin-bottom: 0;
 }
 
 p {
@@ -218,6 +220,18 @@ strong {
 
 em {
 	font-style: italic;
+}
+
+kbd,
+code,
+var {
+	color: #96268a;
+	font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
+	font-size: 0.9rem;
+}
+
+kbd {
+	border-bottom-width: 3px;
 }
 
 a {
@@ -387,6 +401,10 @@ button,
 
 .o-container--lg {
 	max-width: 80rem;
+}
+
+.o-island {
+	margin-bottom: var(--spacing--xl);
 }
 
 .o-block-grid {
@@ -689,6 +707,20 @@ button,
 	}
 }
 
+.c-image-text-split {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	margin-bottom: 1.25em;
+}
+
+.c-image-text-split__text,
+.c-image-text-split__image {
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
 .c-image-text-split__text {
 	max-width: 37rem;
 }
@@ -700,7 +732,7 @@ button,
 
 @media screen and (min-width: 60rem) {
 	.c-image-text-split {
-		display: flex;
+		flex-direction: row;
 		justify-content: center;
 		align-items: center;
 		gap: 48px;
@@ -708,10 +740,13 @@ button,
 
 	.c-image-text-split__text,
 	.c-image-text-split__image {
-		width: 50%;
 		margin-left: 0;
 		margin-right: 0;
 	}
+}
+
+.c-icon {
+	margin-bottom: var(--spacing--sm);
 }
 
 // Wires Image
@@ -822,6 +857,10 @@ html[data-theme="dark"] {
 
 	ul:not(.o-list-bare) {
 		list-style: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="19" height="15" viewBox="0 0 19 15" fill="%23bababa"><polygon points="8.64 2.14 7.93 2.84 13.09 8 0 8 0 9 13.09 9 7.93 14.16 8.64 14.86 15 8.5 8.64 2.14"/></svg>');
+	}
+
+	code {
+		color: #ef7a85;
 	}
 
 	.c-theme-switcher-button {
