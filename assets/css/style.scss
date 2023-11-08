@@ -35,16 +35,44 @@ $total-block-grid-columns: 3;
 	}
 }
 
+@font-face {
+	font-family: "Geist";
+	font-style: normal;
+	font-weight: normal;
+	src:
+		url("/assets/fonts/geist/Geist-Regular.otf") format("opentype"),
+		url("/assets/fonts/geist/Geist-Regular.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Geist";
+	font-style: normal;
+	font-weight: bold;
+	src:
+		url("/assets/fonts/geist/Geist-Bold.otf") format("opentype"),
+		url("/assets/fonts/geist/Geist-Bold.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Geist Mono";
+	font-style: normal;
+	font-weight: normal;
+	src:
+		url("/assets/fonts/geist-mono/GeistMono-Regular.otf") format("opentype"),
+		url("/assets/fonts/geist-mono/GeistMono-Regular.woff2") format("woff2");
+}
+
 :root {
 	--typography--font-size: 18px;
-	--typography--line-height: 1.75;
+	--typography--line-height: 1.55;
 	--color--primary: #2c66ee;
 	--color--secondary: #34e3bd;
 	--color--shadow: rgba(44, 102, 238, 0.25);
-	--color--text: #444;
+	--color--text-heading: #444;
+	--color--text: #555;
 	--color--text-secondary: #767676;
 	--color--link: var(--color--primary);
-	--color--border: #eee;
+	--color--border: #ededed;
 	--spacing: 1rem;
 	--spacing--xs: 0.25rem;
 	--spacing--sm: 0.5rem;
@@ -103,7 +131,7 @@ table {
 
 html {
 	color: var(--color--text);
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "Geist", "Helvetica Neue", sans-serif;
 	font-size: 16px;
 	line-height: var(--typography--line-height);
 	font-weight: 400;
@@ -156,9 +184,15 @@ html:after {
 	}
 }
 
+h1,
+h2,
+h3 {
+	color: var(--color--text-heading);
+}
+
 h1 {
 	font-size: 2.25rem;
-	line-height: 1.3;
+	line-height: 1.2;
 	font-weight: bold;
 	margin-bottom: 1em;
 	background: -webkit-linear-gradient(315deg, var(--color--secondary), var(--color--primary));
@@ -168,7 +202,7 @@ h1 {
 
 h2 {
 	font-size: 1.5rem;
-	line-height: 1.4;
+	line-height: 1.2;
 	font-weight: bold;
 	margin-bottom: 0.5em;
 }
@@ -176,13 +210,18 @@ h2 {
 h3,
 .c-h3 {
 	font-size: 1rem;
-	line-height: var(--typography--line-height);
+	line-height: 1.55;
 	font-weight: bold;
 	margin-bottom: 0;
 }
 
 p {
-	margin-bottom: 1.25em;
+	margin-bottom: 1em;
+
+	+ h2,
+	+ h3 {
+		margin-top: 1em;
+	}
 }
 
 small {
@@ -226,7 +265,7 @@ kbd,
 code,
 var {
 	color: #96268a;
-	font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
+	font-family: "Geist Mono", monospace;
 	font-size: 0.9rem;
 }
 
@@ -462,6 +501,7 @@ button,
 
 .c-post-footer {
 	color: var(--color--text-secondary);
+	font-family: "Geist Mono";
 	font-size: 0.666666rem;
 	margin-top: var(--spacing--lg);
 }
@@ -531,6 +571,7 @@ button,
 }
 
 .c-slug {
+	font-family: "Geist Mono";
 	font-size: 0.666666rem;
 }
 
@@ -572,7 +613,7 @@ button,
 
 .c-card__image {
 	border-radius: var(--border-radius);
-	margin-bottom: 0.5rem;
+	margin-bottom: 1rem;
 	box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.45);
 	transition: box-shadow 0.2s, transform 0.2s;
 }
@@ -586,7 +627,7 @@ button,
 
 .c-card__title {
 	font-size: 1rem;
-	margin-bottom: 0;
+	margin-bottom: 0.2em;
 }
 
 .c-button-group {
@@ -654,6 +695,11 @@ button,
 	&:last-child {
 		padding-bottom: 0;
 	}
+}
+
+.c-resume__date {
+	font-family: "Geist Mono";
+	margin-bottom: 0.2em;
 }
 
 .c-resume__details {
@@ -760,6 +806,7 @@ button,
 
 .c-wires-image {
 	display: block;
+	background-color: #fff;
 	padding: 20px 25px 30px;
 	border-radius: var(--border-radius);
 	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.02), 0 3px 12px -4px rgba(50, 50, 93, 0.25), 0 4px 8px -4px rgba(0, 0, 0, 0.1);
@@ -836,7 +883,8 @@ button,
 }
 
 html[data-theme="dark"] {
-	--color--text: #eee;
+	--color--text-heading: #ededed;
+	--color--text: #a1a1a1;
 	--color--text-secondary: #898989;
 	--color--primary: #34e3bd;
 	--color--secondary: #2c66ee;
