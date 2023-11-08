@@ -63,6 +63,8 @@ $total-block-grid-columns: 3;
 }
 
 :root {
+	--typography--font-family: "Geist";
+	--typography--font-family-mono: "Geist Mono";
 	--typography--font-size: 18px;
 	--typography--line-height: 1.55;
 	--color--primary: #2c66ee;
@@ -131,7 +133,7 @@ table {
 
 html {
 	color: var(--color--text);
-	font-family: "Geist", "Helvetica Neue", sans-serif;
+	font-family: var(--typography--font-family), "Helvetica Neue", sans-serif;
 	font-size: 16px;
 	line-height: var(--typography--line-height);
 	font-weight: 400;
@@ -265,7 +267,7 @@ kbd,
 code,
 var {
 	color: #96268a;
-	font-family: "Geist Mono", monospace;
+	font-family: var(--typography--font-family-mono), monospace;
 	font-size: 0.9rem;
 }
 
@@ -501,7 +503,7 @@ button,
 
 .c-post-footer {
 	color: var(--color--text-secondary);
-	font-family: "Geist Mono";
+	font-family: var(--typography--font-family-mono);
 	font-size: 0.666666rem;
 	margin-top: var(--spacing--lg);
 }
@@ -571,7 +573,7 @@ button,
 }
 
 .c-slug {
-	font-family: "Geist Mono";
+	font-family: var(--typography--font-family-mono);
 	font-size: 0.666666rem;
 }
 
@@ -698,7 +700,7 @@ button,
 }
 
 .c-resume__date {
-	font-family: "Geist Mono";
+	font-family: var(--typography--font-family-mono);
 	margin-bottom: 0.2em;
 }
 
