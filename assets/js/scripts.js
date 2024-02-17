@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
 	let theme = localStorage.getItem('theme');
 
-	const setTheme = (toSet) => {
-		theme = toSet;
+	const setTheme = (themeToSet) => {
+		theme = themeToSet;
 		document.documentElement.setAttribute('data-theme', theme);
 	};
 
-	const saveTheme = (toSave) => {
-		localStorage.setItem('theme', toSave);
+	const saveTheme = (themeToSave) => {
+		localStorage.setItem('theme', themeToSave);
 	}
 
 	if ((!theme && darkModeQuery.matches) || theme === 'dark') {
@@ -21,9 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	if (themeSwitcherBtn) {
 		themeSwitcherBtn.addEventListener('click', function() {
-			// eslint-disable-next-line no-console
 			const newTheme = theme === 'dark' ? 'light' : 'dark';
-			console.log(newTheme);
 			setTheme(newTheme);
 			saveTheme(newTheme);
 		});
