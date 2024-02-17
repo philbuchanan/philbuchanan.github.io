@@ -5,6 +5,7 @@
 	src:
 		url("/assets/fonts/geist/Geist-Regular.otf") format("opentype"),
 		url("/assets/fonts/geist/Geist-Regular.woff2") format("woff2");
+	font-display: swap;
 }
 
 @font-face {
@@ -14,6 +15,7 @@
 	src:
 		url("/assets/fonts/geist/Geist-Bold.otf") format("opentype"),
 		url("/assets/fonts/geist/Geist-Bold.woff2") format("woff2");
+	font-display: swap;
 }
 
 @font-face {
@@ -23,6 +25,7 @@
 	src:
 		url("/assets/fonts/geist-mono/GeistMono-Regular.otf") format("opentype"),
 		url("/assets/fonts/geist-mono/GeistMono-Regular.woff2") format("woff2");
+	font-display: swap;
 }
 
 :root {
