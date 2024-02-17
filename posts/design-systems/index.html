@@ -28,12 +28,13 @@
 		<main class="c-main-content">
 			<article class="c-project">
 				<div class="o-container">
-					<header class="c-project__header">
+					<header>
 						<h1>Tetra Trust’s Design System</h1>
 						<p>A thoughtful design system can unlock a designer’s full potential, allowing them to focus on rich customer experiences rather than specific details of brand implementation and cross-application consistency.</p>
 					</header>
-					<section class="o-island">
-						<p>Tetra’s system is based on a decade of lessons learned building and contributing to design systems at <a href="/posts/take-ownership-of-your-design-with-living-style-guides/">EventMobi</a>, <a href="https://aubsandmugg.com">Aubs & Mugg</a>, and <a href="https://reflectivity.io">Reflectivity</a>. It is comprised of principles, base styles, components, and patterns.</p>
+					<section class="c-section">
+						<h2 class="u-sr-only">Design System Overview</h2>
+						<p><a href="https://tetratrust.com">Tetra Trust’s</a> system is based on a decade of lessons learned building and contributing to design systems at <a href="/posts/take-ownership-of-your-design-with-living-style-guides/">EventMobi</a>, <a href="https://aubsandmugg.com">Aubs & Mugg</a>, and <a href="https://reflectivity.io">Reflectivity</a>. It is comprised of principles, base styles, components, and patterns.</p>
 						<ul>
 							<li>
 								<h2 class="c-h3">Principles</h2>
@@ -53,8 +54,10 @@
 							</li>
 						</ul>
 					</section>
-					<section class="o-island">
-						<img src="/assets/images/portfolio/design-systems/layers.svg" alt="Illustrative staked layers of a design system" width="72" height="70" loading="lazy" class="c-icon">
+					<section class="c-section">
+						<div style="margin-bottom: var(--spacing--sm);">
+							<img src="/assets/images/portfolio/design-systems/layers.svg" alt="Illustrative staked layers of a design system" width="72" height="70" loading="lazy">
+						</div>
 						<h2>Component Style Layering</h2>
 						<p>The component system is split into five layers of styling, each building upon the layer below.</p>
 						<ul>
@@ -80,7 +83,7 @@
 							</li>
 						</ul>
 					</section>
-					<section class="o-island">
+					<section class="c-section">
 						<h2>Managing Responsiveness</h2>
 						<p>Design systems need to adapt to a wide range of contexts, screen sizes, and environments. When working with responsive styles, there are a number of principles Tetra’s system follows.</p>
 						<ol>
@@ -90,7 +93,7 @@
 							<li>Only in rare cases should a component require dedicated responsive styles.</li>
 						</ol>
 					</section>
-					<section>
+					<section class="c-section">
 						<h2>Tooling</h2>
 						<p>Tetra’s design system is built with <a href="https://www.typescriptlang.org">TypeScript</a> using the <a href="https://react.dev">React.js</a> library. TypeScript reduces code errors by ensuring accuracy in types passed to and used by components. Hooks in React.js provide an easy, efficient, and performant method for handling state and lifecycle changes within individual components. Hooks also make the code easier to read and maintain by logically grouping functionality together. CSS in the system is primarily vanilla, leveraging CSS custom properties (variables) for many of the shared properties like spacing and colours. <a href="https://sass-lang.com">Sass</a> is used as a pre-processor in select places to make quick work of applying iterable styles such as defining grid widths, indentation for a tree view, or applying multiple size variants for a component (<code>xs</code>, <code>sm</code>, <code>md</code>, <code>lg</code>, and <code>xl</code>).</p>
 					</section>
