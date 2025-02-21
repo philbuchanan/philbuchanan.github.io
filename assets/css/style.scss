@@ -363,6 +363,11 @@ figcaption {
 	}
 }
 
+.o-spacer {
+	margin-left: var(--spacing--xs);
+	margin-right: var(--spacing--xs);
+}
+
 // 3. Components
 .c-site-header {
 	border-bottom: 1px solid var(--color--border);
