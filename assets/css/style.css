@@ -355,7 +355,7 @@ figcaption {
 
 @media screen and (min-width: 700px) and (max-width: 1133px) {
 	.o-list-grid > :nth-child(odd) {
-	  padding-right: 1rem;
+		padding-right: 1rem;
 	}
 
 	.o-list-grid > :nth-child(-n + 2) {
@@ -363,7 +363,7 @@ figcaption {
 	}
 
 	.o-list-grid > :nth-child(even) {
-	  padding-left: 1rem;
+		padding-left: 1rem;
 	}
 
 	.o-list-grid--last-row--md {
@@ -381,16 +381,16 @@ figcaption {
 	}
 
 	.o-list-grid > :nth-child(3n + 1) {
-	  padding-right: 1rem;
+		padding-right: 1rem;
 	}
 
 	.o-list-grid > :nth-child(3n + 2) {
-	  padding-left: 1rem;
-	  padding-right: 1rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 
 	.o-list-grid > :nth-child(3n) {
-	  padding-left: 1rem;
+		padding-left: 1rem;
 	}
 
 	.o-list-grid--last-row--lg {
