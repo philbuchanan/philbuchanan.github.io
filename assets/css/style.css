@@ -640,7 +640,8 @@ html[data-theme="dark"] .c-button:hover {
   }
 
   .c-site-header,
-  .c-site-footer {
+  .c-site-footer,
+  .u-hidden-print {
     display: none;
   }
 }
