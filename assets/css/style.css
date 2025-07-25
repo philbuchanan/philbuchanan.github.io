@@ -46,6 +46,7 @@
   --spacing--lg: 2rem;
   --spacing--xl: 3rem;
   --border-radius: 1rem;
+  --border-radius--sm: 0.25rem;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -471,6 +472,14 @@ figcaption {
 .c-book-cover {
   flex: 0 0 auto;
   width: 4.5rem;
+}
+
+.c-book-cover img {
+  border-radius: var(--border-radius--sm);
+}
+
+img.has-border {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06)
 }
 
 @media screen and (max-width: 375px) {
