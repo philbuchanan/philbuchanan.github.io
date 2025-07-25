@@ -9,8 +9,8 @@
     <link rel="icon" type="image/png" href="/assets/logos/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/logos/icon-180.png">
   </head>
-  <body class="o-container">
-    <header class="c-site-header">
+  <body>
+    <header class="c-site-header o-container">
       <nav class="c-breadcrumbs" aria-label="Breadcrumb">
         <ol class="o-list-bare c-breadcrumbs__list">
           <li class="c-breadcrumbs__item"><a href="/">Home</a></li>
@@ -20,51 +20,53 @@
         </ol>
       </nav>
     </header>
-    <main class="c-main-content">
+    <main class="c-main-content o-container">
       <section class="c-section">
         <h1>404 Error</h1>
         <p>Whoops. This page doesn’t exist. <a href="/">Back home?</a></p>
       </section>
     </main>
     <footer class="c-site-footer">
-      <nav class="c-nav">
-        <p class="u-sr-only">Follow me on social media</p>
-        <ul class="c-nav__list o-list-bare">
-          <li class="c-nav__item">
-            <a href="mailto:info@philbuchanan.com" class="c-nav__link">Email</a>
-          </li>
-          <li class="c-nav__item">
-            <a href="https://www.linkedin.com/in/philipbuchanan/" class="c-nav__link">LinkedIn</a>
-          </li>
-          <li class="c-nav__item">
-            <a href="https://github.com/philbuchanan" class="c-nav__link">GitHub</a>
-          </li>
-          <li class="c-nav__item">
-            <a rel="me" href="https://mastodon.social/@philbuchanan" class="c-nav__link">Mastodon</a>
-          </li>
-          <li class="c-nav__item is-theme-switcher">
-            <button id="js-theme-switcher-button" class="o-button-bare c-theme-switcher-button">
-              <span class="u-sr-only">Toggle theme</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" role="img" aria-hidden="true" focusable="false">
-                <g class="light">
-                  <circle class="sun" cx="8" cy="8" r="3.75"/>
-                  <circle class="segment-1" cx="8" cy="1.25" r="1.25"/>
-                  <circle class="segment-2" cx="12.77" cy="3.23" r="1.25"/>
-                  <circle class="segment-3" cx="14.75" cy="8" r="1.25"/>
-                  <circle class="segment-4" cx="12.77" cy="12.77" r="1.25"/>
-                  <circle class="segment-5" cx="8" cy="14.75" r="1.25"/>
-                  <circle class="segment-6" cx="3.23" cy="12.77" r="1.25"/>
-                  <circle class="segment-7" cx="1.25" cy="8" r="1.25"/>
-                  <circle class="segment-8" cx="3.23" cy="3.23" r="1.25"/>
-                </g>
-                <g class="dark">
-                  <path class="moon" d="M7,1.81A6,6,0,0,1,7.1,1,7,7,0,1,0,15,8.15a6.93,6.93,0,0,1-1.45.16A6.5,6.5,0,0,1,7,1.81Z"/>
-                </g>
-              </svg>
-            </button>
-          </li>
-        </ul>
-      </nav>
+      <div class="o-container">
+        <nav class="c-nav">
+          <h2 class="u-sr-only">Contact or follow me on social media</h2>
+          <ul class="c-nav__list o-list-bare">
+            <li class="c-nav__item">
+              <a href="mailto:phil@philbuchanan.com" class="c-nav__link">Email</a>
+            </li>
+            <li class="c-nav__item">
+              <a href="https://www.linkedin.com/in/philipbuchanan/" class="c-nav__link">LinkedIn</a>
+            </li>
+            <li class="c-nav__item">
+              <a href="https://github.com/philbuchanan" class="c-nav__link">GitHub</a>
+            </li>
+            <li class="c-nav__item">
+              <a rel="me" href="https://mastodon.social/@philbuchanan" class="c-nav__link">Mastodon</a>
+            </li>
+            <li class="c-nav__item is-theme-switcher">
+              <button id="js-theme-switcher-button" class="o-button-bare c-theme-switcher-button">
+                <span class="u-sr-only">Toggle theme</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                  <g class="light">
+                    <circle class="sun" cx="8" cy="8" r="3.75"/>
+                    <circle class="segment-1" cx="8" cy="1.25" r="1.25"/>
+                    <circle class="segment-2" cx="12.77" cy="3.23" r="1.25"/>
+                    <circle class="segment-3" cx="14.75" cy="8" r="1.25"/>
+                    <circle class="segment-4" cx="12.77" cy="12.77" r="1.25"/>
+                    <circle class="segment-5" cx="8" cy="14.75" r="1.25"/>
+                    <circle class="segment-6" cx="3.23" cy="12.77" r="1.25"/>
+                    <circle class="segment-7" cx="1.25" cy="8" r="1.25"/>
+                    <circle class="segment-8" cx="3.23" cy="3.23" r="1.25"/>
+                  </g>
+                  <g class="dark">
+                    <path class="moon" d="M7,1.81A6,6,0,0,1,7.1,1,7,7,0,1,0,15,8.15a6.93,6.93,0,0,1-1.45.16A6.5,6.5,0,0,1,7,1.81Z"/>
+                  </g>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </footer>
     <script src="/assets/js/scripts.min.js" defer></script>
   </body>
