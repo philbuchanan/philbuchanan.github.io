@@ -2,8 +2,8 @@
   font-family: "Geist";
   font-style: normal;
   font-weight: normal;
-  src: url("/assets/fonts/geist/Geist-Regular.otf") format("opentype"),
-    url("/assets/fonts/geist/Geist-Regular.woff2") format("woff2");
+  src: url("/assets/fonts/geist/Geist-Regular.woff2") format("woff2"),
+    url("/assets/fonts/geist/Geist-Regular.otf") format("opentype");
   font-display: swap;
 }
 
@@ -11,8 +11,8 @@
   font-family: "Geist";
   font-style: normal;
   font-weight: bold;
-  src: url("/assets/fonts/geist/Geist-Bold.otf") format("opentype"),
-    url("/assets/fonts/geist/Geist-Bold.woff2") format("woff2");
+  src: url("/assets/fonts/geist/Geist-Bold.woff2") format("woff2"),
+    url("/assets/fonts/geist/Geist-Bold.otf") format("opentype");
   font-display: swap;
 }
 
@@ -20,9 +20,9 @@
   font-family: "Geist Mono";
   font-style: normal;
   font-weight: normal;
-  src: url("/assets/fonts/geist-mono/GeistMono-Regular.otf")
-      format("opentype"),
-    url("/assets/fonts/geist-mono/GeistMono-Regular.woff2") format("woff2");
+  src: url("/assets/fonts/geist-mono/GeistMono-Regular.woff2") format("woff2"),
+    url("/assets/fonts/geist-mono/GeistMono-Regular.otf")
+      format("opentype");
   font-display: swap;
 }
 
@@ -163,9 +163,16 @@ h1 {
   line-height: 1.2;
   font-weight: bold;
   margin-bottom: 0.4444em;
-  background: -webkit-linear-gradient(290deg, var(--color--secondary), var(--color--primary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+}
+
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  h1 {
+    background: linear-gradient(160deg, var(--color--secondary), var(--color--primary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
 }
 
 h2 {
@@ -266,7 +273,7 @@ a:hover {
 
 img {
   max-width: 100%;
-  height: inherit;
+  height: auto;
   vertical-align: middle;
 }
 
@@ -581,14 +588,16 @@ html[data-theme="dark"]:after {
   background: linear-gradient(var(--color--primary), #0038ba);
 }
 
-html[data-theme="dark"] h1 {
-  background: -webkit-linear-gradient(
-    315deg,
-    var(--color--primary),
-    var(--color--secondary)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  html[data-theme="dark"] h1 {
+    background: linear-gradient(
+      135deg,
+      var(--color--primary),
+      var(--color--secondary)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
 }
 
 html[data-theme="dark"] ul:not(.o-list-bare) {
